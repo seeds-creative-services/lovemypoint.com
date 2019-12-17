@@ -55,7 +55,7 @@ get_header("light"); ?>
     <div class="divider"></div>
 
     <h2 class="text-center">Tradition &amp; Passion</h2>
-    <p class="lg:max-w-6xl mx-auto text-center">It all started in 2013 when a group of friends in the restaurant industry decided to open a neighborhood pub and grill by purchasing the historic Rostel Building in downtown Central Point, Oregon. After much success, the group opened their second location in Medford, Oregon in March of 2016. The Point’s mission is to be the world’s best neighborhood pub and grill experience. Being the best means providing outstanding quality, service, cleanliness, and value, so that we make every customer smile and say “I’ll be back!”.</p>
+    <p class="lg:max-w-6xl mx-auto text-center">It all started in 2013 when a group of friends in the restaurant industry decided to open a neighborhood pub and grill by purchasing the historic Rostel Building in downtown Central Point, Oregon. After much success, the group has since opened additional locations in Medford and Bend. The Point’s mission is to be the world’s best neighborhood pub and grill experience. Being the best means providing outstanding quality, service, cleanliness, and value, so that we make every customer smile and say “I’ll be back!”.</p>
 
   </div>
 </section>
