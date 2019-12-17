@@ -1,0 +1,36 @@
+.seeds_parallax {
+
+  @apply overflow-hidden h-auto w-full p-0 max-h-screen;
+
+  &::before {
+
+    @apply h-0 w-full relative float-left;
+    padding-bottom: 56.666%;
+    content: '';
+
+  }
+
+  &_content {
+
+    @apply absolute w-full;
+
+    transform: translate3d(0, -50%, 0);
+    z-index: 6;
+    top: 50%;
+    left: 0;
+
+  }
+
+  &_layer {
+
+    @apply absolute bottom-0 right-0 left-0 top-0;
+    transition: 0s linear;
+    transition-property: background-position;
+    transform: translate3d(0, 0, 0);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: 100%;
+
+  }
+
+}

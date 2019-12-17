@@ -1,0 +1,29 @@
+:root {
+
+  --color-branding-primary-green: #98c44c;
+  --color-branding-primary-green-medium: #2F8F83;
+  --color-branding-primary-green-dark: #00525F; 
+  
+  --color-branding-primary-blue: #3C91E6;
+  --color-branding-primary-brown: #6F635A;
+  --color-branding-primary-yellow: #FBE200;
+
+  --color-branding-secondary-dark-gray: #444155;
+  --color-branding-secondary-medium-gray: #737373;
+  --color-branding-secondary-light-gray: #F2F4F7;
+  --color-branding-secondary-lightest-gray: #FCFDFC;
+
+  --color-body-background: var(--color-branding-secondary-lightest-gray);
+
+  --color-body-text: var(--color-branding-secondary-medium-gray);
+  --color-headline-text: var(--color-branding-secondary-dark-gray);
+
+  --var-header-height: 12rem;
+
+  --var-wrapper-width: 1425px;
+
+  --var-divider-height: 4px;
+
+  --var-sidebar-width: 124px;
+
+}

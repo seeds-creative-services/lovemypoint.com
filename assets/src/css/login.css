@@ -1,0 +1,65 @@
+/* Import Variables. */
+@import "@globals/variables";
+@import "@theme/variables";
+
+/* Import Tailwind. */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+body {
+
+  background-color: #444155;
+  background-color: var(--login-page-background);
+
+}
+
+#login {
+
+  box-shadow: 0 0 0 12px rgba(255, 255, 255, 0.065);
+  transform: translate3d(-50%, -50%, 0);
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  position: absolute;
+  padding: 32px;
+  width: 380px;
+  margin: 0;
+  left: 50%;
+  top: 50%;
+
+  h1 a {
+
+    background-position: center center;
+    background-color: #FFFFFF;
+    margin: -84px auto 0 auto;
+    border-radius: 50%;
+    padding: 12px;
+    height: 108px;
+    width: 108px;
+
+  }
+
+  form {
+
+    margin-top: 32px;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+
+  }
+
+  #nav {
+
+    padding: 0;
+
+  }
+
+}
+
+#backtoblog,
+.privacy-policy-page-link {
+
+  visibility: hidden !important;
+  display: none !important;
+
+}

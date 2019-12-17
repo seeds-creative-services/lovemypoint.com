@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Gupter:700|Poppins:400,500,600,800&display=swap');
+
+:root {
+
+  --theme_font_default: 'Poppins', sans-serif;
+  --theme_font_headline: 'Gupter', sans-serif;
+
+  --theme_colors_background: #FFFCF5;
+  --theme_colors_body_copy: #522A27;
+
+  --theme_colors_accent: #522A27;
+
+  --theme_colors_primary: #E08E45;
+  --theme_colors_secondary: #9E4634;
+
+}

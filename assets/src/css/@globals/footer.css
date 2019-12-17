@@ -1,0 +1,23 @@
+#mobile-footer {  
+  background-color: var(--theme_colors_accent);
+  position: fixed;
+  height: auto;
+  z-index: 100;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+  
+#page-footer {
+  @apply text-center;
+  background-color: var(--theme_colors_accent);
+  color: var(--theme_colors_background);
+  width: calc(100% + 2px);
+  margin: -1px;
+  a {
+    text-decoration-color: currentColor;
+    &:hover {
+      color: var(--theme_colors_primary);
+    }
+  }
+}

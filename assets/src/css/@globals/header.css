@@ -1,0 +1,148 @@
+#page-header {
+  @apply flex relative z-40;
+  color: var(--theme_colors_accent);
+  height: var(--var-header-height);
+  width: calc(100% + 4px);
+  align-items: center;
+  margin: -2px;
+  &.dark {
+    box-shadow: inset 0rem 14rem 5rem -6rem var(--theme_colors_accent);
+    color: var(--theme_colors_background);
+  }
+  #primary-navigation {
+    @apply flex flex-wrap h-full;
+    .nav-link {
+      @apply py-4 px-6 font-extrabold uppercase inline-flex;
+      transition: transform .2s ease, opacity .2s ease;
+      transform: translate3d(0, 0, 0);
+      letter-spacing: 0.5px;
+      font-size: 0.9375rem;
+      line-height: 1;
+      opacity: 1;
+    }
+    > ul {
+      @apply w-full flex items-center justify-between;
+      height: calc(var(--var-header-height) / 2);
+
+      &:hover {
+
+        .nav-link {
+
+          &:not([href="/"]):not(:hover) {
+            transform: translate3d(0, 0, 0);
+            opacity: 0.35;
+          }
+
+          &:not([href="/"]):hover {
+            border-bottom: 3px solid currentColor;
+            transform: translate3d(0, -0.5rem, 0);
+            opacity: 1;
+          }
+
+        }
+
+      }
+
+    }
+    #desktop-logo {
+      @apply inline-flex;
+    }
+    #mobile-menu-toggle {
+      @apply hidden;
+    }
+  }
+  + .sc {
+    padding-top: calc(var(--var-header-height) + 5rem);
+    margin-top: calc(var(--var-header-height) * -1);
+    @media screen and (max-width: 600px) {
+      &.block-splash {
+        padding-top: var(--var-header-height);
+      }
+    }
+  }
+  @media screen and (max-width: 600px) {
+    @apply fixed top-0 left-0 h-auto;
+    background-color: var(--theme_colors_accent) !important;
+    color: var(--theme_colors_background) !important;
+    box-shadow: none !important;
+    z-index: 100 !important;
+    &::before {
+      @apply absolute w-full z-10;
+      transform: translateY(calc(100% - 1px)) rotateZ(180deg);
+      padding-bottom: 1.927083333333333%;
+      content: '';
+      bottom: 0;
+      @supports(mask: url('')) {
+        mask-image: url('../../images/section-dark-tear-top.png');
+        mask-size: cover;
+      }
+      @supports not (mask: url('')) {
+        background-image: url('../../images/section-dark-tear-top.png');
+      }
+      background-color: var(--theme_colors_accent);
+    }
+    #primary-navigation {
+      height: calc(var(--var-header-height) / 2);
+      justify-content: space-between;
+      align-items: center;
+      > ul {
+        @apply fixed bottom-0 top-0 justify-start;
+        padding-top: calc(var(--var-header-height) / 1.5);
+        background-color: var(--theme_colors_accent);
+        transition: transform .365s ease-in-out;
+        transform: translate3d(0, 0, 0);
+        flex-direction: column;
+        height: 100vh;
+        z-index: -1;
+        width: 100%;
+        left: 100%;
+        > li:not(.hidden) {
+          @apply inline-flex;
+        }
+      }
+      .nav-link {
+        @apply py-3;
+      }
+      #desktop-logo {
+        @apply hidden;
+      }
+      #mobile-menu-toggle {
+        @apply flex float-right;
+        flex-direction: column;
+        .hamburger {
+          @apply inline-flex;
+          transition: all .2s ease-in-out;
+          background-color: var(--theme_colors_background);
+          transform: translateY(0) rotateZ(0deg);
+          transform-origin: center center;
+          border-radius: 0.266666666666667rem;
+          height: 0.266666666666667rem;
+          margin: 0.25rem 0;
+          width: 3rem;
+          opacity: 1;
+        }
+      }
+      #mobile-menu-checkbox:checked {
+        + #mobile-menu-toggle {
+          .hamburger {
+            &:nth-child(1) {
+              transform: translateY(0.75rem) rotateZ(-45deg);
+            }
+            &:nth-child(2) {
+              opacity: 0;
+            }
+            &:nth-child(3) {
+              transform: translateY(-0.75rem) rotateZ(45deg);
+            }
+          }
+        }
+        ~ ul {
+          transform: translate3d(-100%, 0, 0);
+        }
+      }
+    }
+    + .sc {
+      margin-top: calc(calc(var(--var-header-height) / 1.5) * -1);
+    }
+  }
+}

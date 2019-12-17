@@ -1,0 +1,129 @@
+h1, h2, h3, h4, h5, h6 {
+  @apply font-medium;
+  font-family: var(--theme_font_headline);
+  letter-spacing: 0.1vmax;
+  color: inherit;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+}
+
+h1 {
+  @apply pb-12;
+  font-size: calc(4vmin + 3.5rem);
+  letter-spacing: 0.1vmax;
+  line-height: 1.05;
+  @media screen and (max-width: 600px) {
+    font-size: calc(3vmin + 1.5rem);
+  }
+}
+
+h2 {
+  @apply pb-10;
+  letter-spacing: 0.1vmax;
+  font-size: calc(3vmin + 1.5rem);
+}
+
+h3 {
+  @apply pb-8;
+  letter-spacing: 0.1vmax;
+  font-size: calc(2.65vmin + 0.865rem);
+}
+
+h4 {
+  @apply pb-4;
+  letter-spacing: 0.01vmax;
+  font-size: 28px;
+}
+
+h5 {
+  @apply uppercase font-extrabold pb-3;
+  font-family: var(--theme_font_default);
+  letter-spacing: 1px;
+  font-size: 21px;
+}
+
+p {
+
+  @apply pb-3;
+  font-size: 1rem;
+  font-size: calc(0.365vmin + 0.865rem);
+  line-height: 1.65;
+
+  &:last-of-type {
+
+    @apply pb-0;
+
+  }
+
+}
+
+.seeds_text {
+
+  word-wrap: break-word;
+
+  > :last-child {
+
+    @apply pb-0;
+
+  }
+
+  &_light {
+
+    h1, h2, h3, h4, h6, p {
+
+      @apply text-white;
+
+    }
+
+  }
+
+  &_inner {
+
+    @apply relative;
+
+  }
+
+  &_1 {
+
+    @apply max-w-xl;
+    font-size: 20px;
+
+  }
+
+  &_2 {
+
+    @apply max-w-2xl;
+    font-size: 20px;
+
+  }
+
+  &_3 {
+
+    @apply max-w-3xl;
+    font-size: 20px;
+
+  }
+
+  &_4 {
+
+    @apply max-w-4xl;
+    font-size: 20px;
+
+  }
+
+  &_5 {
+
+    @apply max-w-5xl;
+    font-size: 20px;
+
+  }
+
+  &_full {
+
+    @apply max-w-full;
+
+  }
+
+}
