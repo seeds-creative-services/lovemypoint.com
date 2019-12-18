@@ -86,13 +86,16 @@ get_header("light"); ?>
 
       <h2 class="text-center">Make a Reservation</h2>
 
-      <form class="mb-8">
+      <form class="mb-8" method="POST" action="<?php echo get_stylesheet_directory_uri(); ?>/send-email.php" onsubmit="SEEDS.SubmitForm(event);">
+
+        <input type="hidden" name="subject" value="New banquet form submission from The Point">
+        <input type="hidden" name="message" value="The banquet form was submitted on The Point. Review the message below.">
 
         <div class="flex flex-wrap justify-center">
           <div class="w-full text-left">
             <div class="flex flex-col">
               <label class="pb-2 border-gray-400" for="name">Your Name</label>
-              <input class="h-12 px-4 rounded border-brand-anvil border-solid border-2" id="name" name="name" type="text" required>
+              <input class="h-12 px-4 rounded border-brand-anvil border-solid border-2" id="name" name="form[name]" type="text" required>
             </div>
           </div>
         </div>
@@ -101,7 +104,7 @@ get_header("light"); ?>
           <div class="w-full text-left">
             <div class="flex flex-col">
               <label class="pb-2 border-gray-400" for="email">Your Email Address</label>
-              <input class="h-12 px-4 rounded border-brand-anvil border-solid border-2" id="name" name="email" type="email" required>
+              <input class="h-12 px-4 rounded border-brand-anvil border-solid border-2" id="email" name="form[email]" type="email" required>
             </div>
           </div>
         </div>
@@ -110,7 +113,7 @@ get_header("light"); ?>
           <div class="w-full text-left">
             <div class="flex flex-col">
               <label class="pb-2 border-gray-400" for="phone">Your Phone Number</label>
-              <input class="h-12 px-4 rounded border-brand-anvil border-solid border-2" id="name" name="phone" type="tel" required>
+              <input class="h-12 px-4 rounded border-brand-anvil border-solid border-2" id="phone" name="form[phone]" type="tel" required>
             </div>
           </div>
         </div>
@@ -118,8 +121,8 @@ get_header("light"); ?>
         <div class="mx-auto flex flex-wrap justify-center mt-6 lg:mt-6">
           <div class="w-full text-left">
             <div class="flex flex-col">
-              <label class="pb-2 border-gray-400" for="phone">Type of Event</label>
-              <select class="h-12 px-4 rounded bg-whitewhite border-brand-anvil border-solid border-2" id="name" name="event" required>
+              <label class="pb-2 border-gray-400" for="event">Type of Event</label>
+              <select class="h-12 px-4 rounded bg-whitewhite border-brand-anvil border-solid border-2" id="event" name="form[event]" required>
                 <option value="Birthday">Birthday</option>
                 <option value="Baby Shower">Baby Shower</option>
                 <option value="Anniversary">Anniversary</option>
@@ -135,8 +138,8 @@ get_header("light"); ?>
         <div class="mx-auto flex flex-wrap justify-center mt-6 lg:mt-6">
           <div class="w-full text-left">
             <div class="flex flex-col">
-              <label class="pb-2 border-gray-400" for="phone">Event Date</label>
-              <input class="h-12 px-4 rounded border-brand-anvil border-solid border-2" id="name" name="phone" type="date" required>
+              <label class="pb-2 border-gray-400" for="date">Event Date</label>
+              <input class="h-12 px-4 rounded border-brand-anvil border-solid border-2" id="name" name="form[date]" type="date" required>
             </div>
           </div>
         </div>
@@ -145,7 +148,7 @@ get_header("light"); ?>
           <div class="w-full text-left">
             <div class="flex flex-col">
               <label class="pb-2 border-gray-400" for="message">Your Message</label>
-              <textarea class="h-12 p-4 h-32 rounded border-brand-anvil border-solid border-2" id="message" name="message"></textarea>
+              <textarea class="h-12 p-4 h-32 rounded border-brand-anvil border-solid border-2" id="message" name="form[message]"></textarea>
             </div>
           </div>
           <button class="btn btn-primary float-left text-white mt-8" type="submit">Make Reservation</button>

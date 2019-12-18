@@ -18,14 +18,14 @@
           <h4>Navigation</h4>
           <div class="w-3/4 mt-4 pt-6 border-t-4 border-double border-brand-mahogany mx-auto"></div>
           <div class="w-full flex flex-wrap justify-center">
-            <a class="p-2" href="#">Home</a>
-            <a class="p-2" href="#">Locations</a>
-            <a class="p-2" href="#">Menu</a>
-            <a class="p-2" href="#">Banquets</a>
-            <a class="p-2" href="#">Gift Cards</a>
-            <a class="p-2" href="#">About</a>
-            <a class="p-2" href="#">Contact</a>
-            <a class="p-2" href="#">Order Online</a>
+            <a class="p-2" href="/">Home</a>
+            <a class="p-2" href="/locations/">Locations</a>
+            <a class="p-2" href="/menu/">Menu</a>
+            <a class="p-2" href="/banquets/">Banquets</a>
+            <a class="p-2" href="https://www.toasttab.com/the-point-pub-and-grill/giftcards" target="_blank">Gift Cards</a>
+            <a class="p-2" href="/about/">About</a>
+            <a class="p-2" href="/contact/">Contact</a>
+            <a class="p-2" href="https://www.toasttab.com/locations/f25e4c72-013e-4056-9824-9f7ab9f53a24" target="_blank">Order Online</a>
           </div>
         </div>
       </div>
@@ -75,3 +75,7 @@
     </div>
   </div>
 </footer>
+
+<!-- Load the child theme scripts. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="<?php echo get_stylesheet_directory_uri() . "/assets/dist/js/script.js" ?>"></script>

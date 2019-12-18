@@ -23,6 +23,31 @@
             View Menu
           </a>
         </div>
+        <script type="application/ld+json">
+        {
+          "@context": "http://schema.org",
+          "@type": "Restaurant",
+          "name": "The Point Pub & Grill",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Central Point",
+            "addressRegion": "OR",
+            "postalCode": "97502",
+            "streetAddress": "311 East Pine Street"
+          },
+          "openingHours": [
+            "Su-Th 11:00-21:00",
+            "Fr-Sa 11:00-22:00"
+          ],
+          "priceRange": "$$",
+          "servesCuisine": [
+            "Happy Hour Food",
+            "Late-Night Food"
+          ],
+          "telephone": "541-665-9015",
+          "url": "https://lovemypoint.com"
+        }
+        </script>
       </div>
 
       <div class="p-2 w-full mb-6 lg:mb-0 lg:w-1/3 text-center text-white">

@@ -1,5 +1,13 @@
 <?php /* Template Name: Menu Page */
 
+$url = 'https://www.taphunter.com/widgets/location/v3/5025877471264768.json';
+$curl_session = curl_init($url);
+curl_setopt($curl_session, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($curl_session, CURLOPT_CONNECTTIMEOUT, 4);
+curl_setopt($curl_session, CURLOPT_TIMEOUT, 10);
+$data = curl_exec($curl_session);
+curl_close($curl_session);
+
 get_header('light'); ?>
 
 <section class="sc block-splash">
@@ -15,17 +23,17 @@ get_header('light'); ?>
 
 <section class="sc sc-light text-center">
 
-  <ul id="menu-quicklinks" class="flex flex-row -mx-6 justify-center flex-wrap z-10">
-    <li><a class="inline-flex py-3 px-6" href="#starters"><h6>Starters</h6></a></li>
-    <li><a class="inline-flex py-3 px-6" href="#sandwiches"><h6>Sandwiches</h6></a></li>
-    <li><a class="inline-flex py-3 px-6" href="#burgers"><h6>Burgers</h6></a></li>
-    <li><a class="inline-flex py-3 px-6" href="#favorites"><h6>Favorites</h6></a></li>
-    <li><a class="inline-flex py-3 px-6" href="#sides"><h6>Sides</h6></a></li>
-    <li><a class="inline-flex py-3 px-6" href="#salads"><h6>Salads</h6></a></li>
-    <li><a class="inline-flex py-3 px-6" href="#pizza"><h6>Pizza</h6></a></li>
-    <li><a class="inline-flex py-3 px-6" href="#desserts"><h6>Desserts</h6></a></li>
-    <li><a class="inline-flex py-3 px-6" href="#cocktails"><h6>Cocktails</h6></a></li>
-    <li><a class="inline-flex py-3 px-6" href="#tap"><h6>Tap List</h6></a></li>
+  <ul id="menu-quicklinks" class="flex flex-row -mx-6 justify-center flex-wrap z-10 px-2 lg:px-0">
+    <li><button class="inline-flex py-3 px-4 lg:px-6" onclick="SEEDS.ScrollToElement('#starters');"><h6>Starters</h6></button></li>
+    <li><button class="inline-flex py-3 px-4 lg:px-6" onclick="SEEDS.ScrollToElement('#sandwiches');"><h6>Sandwiches</h6></button></li>
+    <li><button class="inline-flex py-3 px-4 lg:px-6" onclick="SEEDS.ScrollToElement('#burgers');"><h6>Burgers</h6></button></li>
+    <li><button class="inline-flex py-3 px-4 lg:px-6" onclick="SEEDS.ScrollToElement('#favorites');"><h6>Favorites</h6></button></li>
+    <li><button class="inline-flex py-3 px-4 lg:px-6" onclick="SEEDS.ScrollToElement('#sides');"><h6>Sides</h6></button></li>
+    <li><button class="inline-flex py-3 px-4 lg:px-6" onclick="SEEDS.ScrollToElement('#salads');"><h6>Salads</h6></button></li>
+    <li><button class="inline-flex py-3 px-4 lg:px-6" onclick="SEEDS.ScrollToElement('#pizza');"><h6>Pizza</h6></button></li>
+    <li><button class="inline-flex py-3 px-4 lg:px-6" onclick="SEEDS.ScrollToElement('#desserts');"><h6>Desserts</h6></button></li>
+    <li><button class="inline-flex py-3 px-4 lg:px-6" onclick="SEEDS.ScrollToElement('#cocktails');"><h6>Cocktails</h6></button></li>
+    <li><button class="inline-flex py-3 px-4 lg:px-6" onclick="SEEDS.ScrollToElement('#tap');"><h6>Tap List</h6></button></li>
   </ul>
 
   <div class="container">
@@ -75,11 +83,11 @@ get_header('light'); ?>
 
         </div>
 
+        <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
+
         <div id="burgers">
 
-          <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
-
-          <h2 id="sandwiches">Burgers</h2>
+          <h2>Burgers</h2>
           <p>All burgers are served with your choice of fries or house salad.<br>
             <small>
               <em>Substitute Onion Rings for 3 or Sweet Potato Fries ... <strong class="font-semibold">$1.50</strong></em><br>
@@ -132,9 +140,9 @@ get_header('light'); ?>
 
         </div>
 
-        <div id="sides">
+        <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
 
-          <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
+        <div id="sides">
 
           <h2>Sides</h2>
 
@@ -174,9 +182,9 @@ get_header('light'); ?>
 
       <div class="w-full lg:w-1/2 inline-flex flex-col lg:px-12">
 
-        <div id="sandwiches">
+        <div class="block lg:hidden mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
 
-          <div class="block lg:hidden mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
+        <div id="sandwiches">
 
           <h2>Sandwiches</h2>
           <p>All sandwiches are served with your choice of fries or house salad.<br>
@@ -232,9 +240,9 @@ get_header('light'); ?>
 
         </div>
 
-        <div id="favorites">
+        <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
 
-          <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
+        <div id="favorites">
 
           <h2>Point Favorites</h2>
 
@@ -289,10 +297,9 @@ get_header('light'); ?>
 
     </div>
 
+    <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
 
     <div id="salads">
-
-      <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
 
       <div class="flex flex-col lg:flex-row lg:-mx-12">
 
@@ -384,10 +391,9 @@ get_header('light'); ?>
 
     </div>
 
+    <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
 
     <div id="pizza">
-
-      <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
 
       <div class="flex flex-col lg:flex-row lg:-mx-12">
 
@@ -621,10 +627,9 @@ get_header('light'); ?>
 
     </div>
 
+    <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
 
     <div id="desserts">
-
-      <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
 
       <div class="flex flex-col lg:flex-row lg:-mx-12">
 
@@ -684,10 +689,9 @@ get_header('light'); ?>
 
     </div>
 
+    <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
 
     <div id="cocktails">
-
-      <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
 
       <div class="flex flex-col lg:flex-row lg:-mx-12">
 
@@ -825,10 +829,9 @@ get_header('light'); ?>
 
     </div>
 
+    <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
 
     <div id="tap">
-
-      <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
 
       <div class="flex flex-col lg:flex-row lg:-mx-12">
 
@@ -836,99 +839,39 @@ get_header('light'); ?>
 
           <h2>Tap List</h2>
 
-          <div class="flex flex-col lg:flex-row lg:-mx-12 lg:mt-2">
+          <div class="flex flex-col flex-wrap lg:flex-row lg:-mx-12 lg:mt-2 justify-center">
 
-            <div class="w-full lg:w-1/3 inline-flex flex-col lg:px-12">
-              <div class="mt-8 lg:mt-0">
-                <h4 class="pb-1">Coors Light</h4>
-                <p>Coors Light has a nice, bright appearance when poured and a crisp, clean taste.<br>
-                  <small><em>Coors Brewing Company - ​Golden, CO</em></small>
-                </p>
-                <h4><strong class="font-semibold text-lg">American Light Lager<br>4.2% ABV / ​12 IBU</strong></h4>
-              </div>
-            </div>
+            <?php
 
-            <div class="w-full lg:w-1/3 inline-flex flex-col lg:px-12">
-              <div class="mt-8 lg:mt-0">
-                <h4 class="pb-1">
-                Two-Shy Brewing Ella
-                </h4>
-                <p>A gold-colored, light-bodied German-style beer with crisp, floral hop aroma.<br>
-                  <small><em>Two-Shy Brewing - ​Roseburg, OR</em></small>
-                </p>
-                <h4><strong class="font-semibold text-lg">German Pilsner<br>4.7% ABV / ​22 IBU</strong></h4>
-              </div>
-            </div>
+            if ($data) {
+              $evergreen = json_decode($data);
+              $beer_list = $evergreen->taps;
+              foreach ($beer_list as $beer) { ?>
+                <div class="w-full lg:w-1/3 inline-flex flex-col lg:px-12">
+                  <div class="mt-8 lg:mt-6">
+                    <h4 class="pb-1">
+                      <strong class="font-semibold text-lg"><?php echo $beer->beer->style; ?></strong><br>
+                      <?php echo $beer->beer->name; ?><br>
+                      <span>
+                      <?php foreach($beer->serving_info->sized_pricing as $size) { ?>
+                        <strong class="font-semibold text-lg mr-2"><?php echo $size->size;?>: <?php echo $size->price; ?></strong>
+                      <?php } ?>
+                      </span>
+                    </h4>
+                    <p><?php echo $beer->descriptions->short_description; ?><br>
+                      <small><em><?php echo $beer->brewery->name; ?> - <?php echo $beer->brewery->origin; ?></em></small>
+                    </p>
+                    <h4>
+                      <strong class="font-semibold text-lg">
+                      <?php echo $beer->beer->abv; ?> ABV / ​<?php echo $beer->beer->ibu; ?> IBU
+                    </strong>
+                    </h4>
+                  </div>
+                </div>
+              <?php }
+            }
 
-            <div class="w-full lg:w-1/3 inline-flex flex-col lg:px-12">
-              <div class="mt-8 lg:mt-0">
-                <h4 class="pb-1">
-                Portland Cider Crangerine
-                </h4>
-                <p>Like a white wine with complex flavors. The apple character must marry with the added fruit so that neither one dominates the other.<br>
-                  <small><em>Portland Cider Company​ - Portland, OR</em></small>
-                </p>
-                <h4><strong class="font-semibold text-lg">Cider with Other Fruit<br>5.1% ABV</strong></h4>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="flex flex-col lg:flex-row lg:-mx-12 lg:mt-8">
-
-            <div class="w-full lg:w-1/3 inline-flex flex-col lg:px-12">
-              <div class="mt-8 lg:mt-0">
-                <h4 class="pb-1">Widmer Hefewiezen</h4>
-                <p>A refreshing wheat beer that favors hoppy notes over yeast character.<br>
-                  <small><em>Widmer Brothers Brewing Company - ​Portland, OR</em></small>
-                </p>
-                <h4><strong class="font-semibold text-lg">American Wheat Beer<br>4.9% ABV / ​30 IBU</strong></h4>
-              </div>
-            </div>
-
-            <div class="w-full lg:w-1/3 inline-flex flex-col lg:px-12">
-              <div class="mt-8 lg:mt-0">
-                <h4 class="pb-1">Ecliptic Quasar Pale Ale</h4>
-                <p>Inspired by its luminous namesake, a pale brewed for summer only. Simcoe & Mosaic give a fresh, tropical aroma. Flavorful & easy drinking.<br>
-                  <small><em>Ecliptic Brewing​ - Portland, OR</em></small>
-                </p>
-                <h4><strong class="font-semibold text-lg">American Pale Ale<br>6.0% ABV / ​65 IBU</strong></h4>
-              </div>
-            </div>
-
-            <div class="w-full lg:w-1/3 inline-flex flex-col lg:px-12">
-              <div class="mt-8 lg:mt-0">
-                <h4 class="pb-1">Coldfire Tangle of Tigers</h4>
-                <p>A bitter, moderately strong American pale ale that uses its clean, supporting malt to showcase its hop character.<br>
-                  <small><em>Coldfire Brewing​ - Eugene, OR</em></small>
-                </p>
-                <h4><strong class="font-semibold text-lg">American IPA<br>7.2% ABV</strong></h4>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="flex flex-col lg:flex-row lg:-mx-12 lg:mt-8">
-
-            <div class="w-full lg:w-1/3 inline-flex flex-col lg:px-12">
-              <div class="mt-8 lg:mt-0">
-                <h4 class="pb-1">Widmer Snowplow Milk Stout</h4>
-                <p>A very dark, full-bodied stout with creamy notes that soften its roasted, coffee-flavored qualities.<br>
-                  <small><em>Widmer Brothers Brewing Company​ - Portland, OR</em></small>
-                </p>
-                <h4><strong class="font-semibold text-lg">Sweet Stout</strong></h4>
-              </div>
-            </div>
-
-            <div class="w-full lg:w-1/3 inline-flex flex-col lg:px-12">
-              <div class="mt-8 lg:mt-0">
-                <h4 class="pb-1">Coldfire St. James IRA</h4>
-                <p>Named after ColdFire’s own patron saint, this malty, biscuity red ale is balanced by generous additions of dry hops. St. James took home the 2017 Great American Beer Fest Silver Medal for the Double Red.<br>
-                  <small><em>Coldfire Brewing​ - Eugene, OR</em></small>
-                </p>
-                <h4><strong class="font-semibold text-lg">6.1% ABV / 60 IBU</strong></h4>
-              </div>
-            </div>
+            ?>
 
           </div>
 
