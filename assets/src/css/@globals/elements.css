@@ -136,3 +136,13 @@ Dividers / Spacers
     margin-left: 0;
   }
 }
+
+#menu-locations {
+  button {
+    text-transform: capitalize;
+    color: #868686;
+    &.active {
+      @apply text-brand-mahogany font-extrabold;
+    }
+  }
+}

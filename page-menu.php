@@ -1,12 +1,23 @@
 <?php /* Template Name: Menu Page */
 
-$url = 'https://www.taphunter.com/widgets/location/v3/5025877471264768.json';
-$curl_session = curl_init($url);
-curl_setopt($curl_session, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($curl_session, CURLOPT_CONNECTTIMEOUT, 4);
-curl_setopt($curl_session, CURLOPT_TIMEOUT, 10);
-$data = curl_exec($curl_session);
-curl_close($curl_session);
+$evergreen = array(
+  "central-point" => "https://www.taphunter.com/widgets/location/v3/5025877471264768.json",
+  "medford" => "https://www.taphunter.com/widgets/location/v3/5026409107685376.json",
+  "bend" => "https://www.taphunter.com/widgets/location/v3/4632843144265728.json"
+);
+
+$menus = array();
+
+foreach($evergreen as $location => $url) {
+
+  $curl_session = curl_init($url);
+  curl_setopt($curl_session, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($curl_session, CURLOPT_CONNECTTIMEOUT, 4);
+  curl_setopt($curl_session, CURLOPT_TIMEOUT, 10);
+  $menus[$location] = curl_exec($curl_session);
+  curl_close($curl_session);
+
+}
 
 get_header('light'); ?>
 
@@ -841,11 +852,22 @@ get_header('light'); ?>
 
           <div class="flex flex-col flex-wrap lg:flex-row lg:-mx-12 lg:mt-2 justify-center">
 
+            <div class="flex flex-row mb-6" id="menu-locations">
+              <?php foreach($menus as $location => $menu) { ?>
+                <button class="menu-location-btn inline-flex py-3 px-4" show-location="<?php echo $location; ?>" onclick="SEEDS.ShowLocationMenu('<?php echo $location; ?>');">
+                  <h6><?php echo str_replace('-', ' ', $location); ?></h6>
+                </button>
+              <?php } ?>
+            </div>
+
             <?php
 
-            if ($data) {
-              $evergreen = json_decode($data);
-              $beer_list = $evergreen->taps;
+            foreach($menus as $location => $menu) { ?>
+            
+              <div class="hidden location-menu flex-wrap justify-center" menu-location="<?php echo $location; ?>">
+          
+              <?php $menu = json_decode($menu);
+              $beer_list = $menu->taps;
               foreach ($beer_list as $beer) { ?>
                 <div class="w-full lg:w-1/3 inline-flex flex-col lg:px-12">
                   <div class="mt-8 lg:mt-6">
@@ -868,10 +890,11 @@ get_header('light'); ?>
                     </h4>
                   </div>
                 </div>
-              <?php }
-            }
+              <?php } ?>
 
-            ?>
+            </div>
+              
+            <?php } ?>
 
           </div>
 

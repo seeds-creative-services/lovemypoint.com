@@ -79,17 +79,16 @@ return array(
           <div class="post-type-column">
             <table class="form-table">
               <tbody>
-
                 <tr>
-                  <th scope="row">
-                    <label for="<?php echo $field_name; ?>[street]">Street Address</label>
-                  </th>
                   <td>
-                    <input class="regular-text full-width" id="<?php echo $field_name; ?>[street]" type="text" name="<?php echo $field_name; ?>[street]" value="<?php echo $meta['street'] ?? ''; ?>">
+                    <h3>Location Address</h3>
                   </td>
                 </tr>
-
                 <tr class="post-type-grid">
+                  <td class="post-type-column" style="width:40%">
+                  <label for="<?php echo $field_name; ?>[street]">Street Address</label>
+                    <input class="regular-text full-width" id="<?php echo $field_name; ?>[street]" type="text" name="<?php echo $field_name; ?>[street]" value="<?php echo $meta['street'] ?? ''; ?>">
+                  </td>
                   <td class="post-type-column">
                     <label for="<?php echo $field_name; ?>[city]">City</label>
                     <input class="regular-text full-width" id="<?php echo $field_name; ?>[city]" type="text" name="<?php echo $field_name; ?>[city]" value="<?php echo $meta['city'] ?? ''; ?>">

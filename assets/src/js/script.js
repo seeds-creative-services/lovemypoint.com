@@ -15,6 +15,9 @@
 
   $(window).on('load', function(event) {
 
+    // Show the Central Point menus by default.
+    SEEDS.ShowLocationMenu('central-point')
+
     if(window.location.hash) {
 
       SEEDS.ScrollToElement(window.location.hash)
@@ -101,6 +104,19 @@
       }, scrollSpeed)
 
     }
+
+  };
+
+
+  SEEDS.ShowLocationMenu = function(location) {
+
+    // Turn off active states.
+    $('.menu-location-btn').removeClass('active')
+    $('.location-menu').removeClass('active flex').addClass('hidden')
+
+    // Turn on new active states.
+    $('.menu-location-btn[show-location="' + location + '"]').addClass('active')
+    $('.location-menu[menu-location="' + location + '"]').removeClass('hidden').addClass('active flex')
 
   };
 
