@@ -31,10 +31,39 @@ $template = str_replace("{{CONTENT}}", $message, $template);
 
 try {
 
-  $mail->IsMail();
+  // SMTP Mailer.
+  $mail->isSMTP();
 
-  $mail->setFrom('no-reply@lovemypoint.com', 'The Point');
-  $mail->addAddress('inman.sebastian@gmail.com', 'Sebastian Inman');
+  // Debug SMTP functions.
+  // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+
+  // SMTP Gmail Host.
+  $mail->Host = 'smtp.gmail.com';
+  $mail->Port = 587;
+
+  // Set the encryption mechanism to use STARTTLS.
+  $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+
+  // Authenticate SMTP.
+  $mail->SMTPAuth = true;
+
+  // Login to the SMTP authenticator.
+  $mail->Username = 'no-reply@lovemypoint.com';
+  $mail->Password = 'lovemypoint';
+
+  // This is who the email is being sent from.
+  $mail->setFrom('no-reply@lovemypoint.com', 'The Point Pub & Grill');
+
+  // Send the email to these addresses.
+  $mail->addAddress('thoevet@lovemypoint.com');
+  $mail->addAddress('ctouzet@lovemypoint.com');
+  $mail->addAddress('dlewis@lovemypoint.com');
+  $mail->addAddress('rburns@lovemypoint.com');
+  $mail->addAddress('katied@lovemypoint.com');
+  $mail->addAddress('jarmstrong@lovemypoint.com');
+
+  // CC Myself on all emails.
+  $mail->addCC('sebastian@seedscs.com', 'Sebastian Inman');
 
   $mail->isHTML(true);
   $mail->Subject = $subject;

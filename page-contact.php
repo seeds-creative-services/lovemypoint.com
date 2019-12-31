@@ -18,8 +18,8 @@ get_header(); ?>
           <div class="flex flex-wrap justify-center">
             <div class="w-full text-left">
               <div class="flex flex-col">
-                <label class="pb-2 border-gray-400" for="name">Your Name</label>
-                <input class="h-12 px-4 rounded border-brand-anvil border-solid border-2" id="name" name="form[name]" type="text" required>
+                <label class="pb-2 border-gray-400" for="input-name">Your Name</label>
+                <input class="h-12 px-4 rounded border-brand-anvil border-solid border-2" id="input-name" name="form[name]" type="text" required>
               </div>
             </div>
           </div>
@@ -27,8 +27,8 @@ get_header(); ?>
           <div class="mx-auto flex flex-wrap justify-center mt-6 lg:mt-6">
             <div class="w-full text-left">
               <div class="flex flex-col">
-                <label class="pb-2 border-gray-400" for="email">Your Email Address</label>
-                <input class="h-12 px-4 rounded border-brand-anvil border-solid border-2" id="name" name="form[email]" type="email" required>
+                <label class="pb-2 border-gray-400" for="input-email">Your Email Address</label>
+                <input class="h-12 px-4 rounded border-brand-anvil border-solid border-2" id="input-email" name="form[email]" type="email" required>
               </div>
             </div>
           </div>
@@ -36,8 +36,8 @@ get_header(); ?>
           <div class="mx-auto flex flex-wrap justify-center mt-6 lg:mt-6">
             <div class="w-full text-left">
               <div class="flex flex-col">
-                <label class="pb-2 border-gray-400" for="phone">Your Phone Number</label>
-                <input class="h-12 px-4 rounded border-brand-anvil border-solid border-2" id="name" name="form[phone]" type="tel" required>
+                <label class="pb-2 border-gray-400" for="input-phone">Your Phone Number</label>
+                <input class="h-12 px-4 rounded border-brand-anvil border-solid border-2" id="input-phone" name="form[phone]" type="tel" required>
               </div>
             </div>
           </div>
@@ -45,8 +45,8 @@ get_header(); ?>
           <div class="mx-auto flex flex-wrap mt-6 lg:mt-6 justify-center lg:justify-start">
             <div class="w-full text-left">
               <div class="flex flex-col">
-                <label class="pb-2 border-gray-400" for="message">Your Message</label>
-                <textarea class="h-12 p-4 h-32 rounded border-brand-anvil border-solid border-2" id="message" name="form[message]"></textarea>
+                <label class="pb-2 border-gray-400" for="input-message">Your Message</label>
+                <textarea class="h-12 p-4 h-32 rounded border-brand-anvil border-solid border-2" id="input-message" name="form[message]"></textarea>
               </div>
             </div>
 
