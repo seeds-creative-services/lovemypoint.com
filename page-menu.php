@@ -29,7 +29,7 @@ get_header('light'); ?>
       <a class="btn btn-lg btn-primary hidden lg:inline-flex" href="https://www.toasttab.com/locations/f25e4c72-013e-4056-9824-9f7ab9f53a24" target="_blank">Order Online</a>
     </div>
   </div>
-  <figure class="block-splash-image" style="background-image:url('/wp-content/uploads/IMG_3680.jpg');"></figure>
+  <figure class="block-splash-image" style="background-image:url('<?php echo get_the_post_thumbnail_url(); ?>');"></figure>
 </section>
 
 <section class="sc sc-light text-center">

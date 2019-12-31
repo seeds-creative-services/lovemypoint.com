@@ -9,7 +9,7 @@ get_header("light"); ?>
       <h3 class="lg:max-w-4xl mx-auto">Meet new friends, enjoy the company of family, or host your next best party!</h3>
     </div>
   </div>
-  <figure class="block-splash-image" style="background-image:url('/wp-content/uploads/IMG_3710-Edit-scaled-e1576285971302.jpg');"></figure>
+  <figure class="block-splash-image" style="background-image:url('<?php echo get_the_post_thumbnail_url(); ?>');"></figure>
 </section>
 
 <section class="sc sc-light">
