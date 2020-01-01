@@ -104,8 +104,8 @@ if(strpos($key, "theme_colors_") === 0) { ?> --<?php echo $key; ?>: <?php echo "
 
             <strong>Central Point</strong>
             <p class="font-semibold">
-              <a href="tel:5415550123">
-                <i class="fas fa-phone mr-2"></i>541-555-0123
+              <a href="tel:5416659015">
+                <i class="fas fa-phone mr-2"></i>541-665-9015
               </a>
             </p>
 
