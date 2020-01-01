@@ -13,6 +13,24 @@
   "use strict";
 
 
+  SEEDS.reCAPTCHAToken = 'null'
+
+
+  // Load the recaptcha
+  grecaptcha.ready(function() {
+
+    grecaptcha.execute('6LdqXMsUAAAAAEUOxcZt2rYkV92X0RGuLIIRF0y2', {action: 'homepage'}).then(function(token) {
+
+      SEEDS.reCAPTCHAToken = token
+      
+      $('form').removeClass('disabled')
+      $('form').removeAttr('disabled')
+
+    });
+
+  });
+
+
   $(window).on('load', function(event) {
 
     // Show the Central Point menus by default.
@@ -42,32 +60,45 @@
     var data = element.serializeArray()
     var url = element.attr("action")
 
-    $.ajax({
+    if(SEEDS.reCAPTCHAToken !== 'null') {
 
-      url, method, data, cache: false,
+      data.push({name: 'captcha', value: SEEDS.reCAPTCHAToken})
 
-      success: function(response) {
+      $.ajax({
 
-        if (response === "success") {
+        url, method, data, cache: false,
 
-          alert("Your message was sent successfully!")
+        success: function(response) {
 
-        } else {
+          if (response === "success") {
 
-          alert("There was an error, please try again soon.")
+            alert("Your message was sent successfully!")
+
+            // Reset form elements.
+            element.find('input textarea').val('')
+
+          } else {
+
+            alert("There was an error, please try again soon.")
+            console.error(response)
+
+          }
+
+        },
+
+        error: function(response) {
+
           console.error(response)
 
         }
 
-      },
+      });
 
-      error: function(response) {
+    }else{
 
-        console.error(response)
+      alert("There was an error, please try again soon.")
 
-      }
-
-    });
+    }
 
   };
 

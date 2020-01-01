@@ -10,7 +10,7 @@ get_header(); ?>
     <div class="flex flex-col lg:flex-row mt-6 justify-center">
 
       <div class="w-full lg:w-2/5">
-        <form method="POST" action="<?php echo get_stylesheet_directory_uri(); ?>/send-email.php" onsubmit="SEEDS.SubmitForm(event);">
+        <form id="contact-form" class="disabled" method="POST" action="<?php echo get_stylesheet_directory_uri(); ?>/send-email.php" onsubmit="SEEDS.SubmitForm(event);" disabled>
 
           <input type="hidden" name="subject" value="New contact form submission from The Point">
           <input type="hidden" name="message" value="The contact form was submitted on The Point. Review the message below.">

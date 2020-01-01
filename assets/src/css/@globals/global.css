@@ -38,6 +38,13 @@ body {
   }
 }
 
+form.disabled,
+form[disabled] {
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.365;
+}
+
 a:not(.btn):not(.nav-link) {
   text-decoration: underline;
   text-decoration-color: transparent;

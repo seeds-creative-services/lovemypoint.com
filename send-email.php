@@ -9,74 +9,119 @@ use PHPMailer\PHPMailer\Exception;
 
 require(dirname(__FILE__) . '/vendor/autoload.php');
 
-$mail = new PHPMailer(true);
+if(isset($_POST['captcha']) && $_POST['captcha'] !== "") {
 
-$subject = $_POST['subject'] ?? "New form submitted from The Point";
+  $captcha = $_POST['captcha'];
+  $captchaURL = "https://www.google.com/recaptcha/api/siteverify";
+  $captchaSecret = "6LdqXMsUAAAAAAI7Cd6XTMrCf0TP-n0opTioMho6";
 
-$template = file_get_contents('./emails/template.html');
+  $captchaData = array(
+    "secret" => $captchaSecret,
+    "response" => $captcha
+  );
 
-$template = str_replace("{{SUBJECT}}", $subject, $template);
-$template = str_replace("{{MESSAGE}}", $_POST['message'] ?? "New form submitted from The Point", $template);
+  $curl = curl_init($captchaURL);
+  $curlString = http_build_query($captchaData, '', '&');
 
-$message = "";
+  curl_setopt($curl, CURLOPT_POST, 1);
+  curl_setopt($curl, CURLOPT_POSTFIELDS, $curlString);
+  curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
-foreach($_POST['form'] as $input => $value) {
+  $curlResponse = curl_exec($curl);
+  $curlJSON = json_decode($curlResponse, true);
 
-  // Sanitize the user input.
-  $value = htmlspecialchars(strip_tags($value));
+  if(isset($curlJSON['success']) && ($curlJSON['success'] === 1 || $curlJSON['success'] === true || $curlJSON['success'] === '1' || $curlJSON['success'] === 'true')) {
 
-  $message .= "<p style='font-family: sans-serif; font-size: 12px; font-weight: bold; text-transform: uppercase; margin: 0; margin-bottom: 5px;'>{$input}</p>";
-  $message .= "<p style='font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; margin-bottom: 20px;'>{$value}</p>";
+    if($curlJSON['score'] > 0.4) {
 
-}
+      $mail = new PHPMailer(true);
 
-$template = str_replace("{{CONTENT}}", $message, $template);
+      $subject = $_POST['subject'] ?? "New form submitted from The Point";
 
-try {
+      $template = file_get_contents('./emails/template.html');
 
-  // SMTP Mailer.
-  $mail->isSMTP();
+      $template = str_replace("{{SUBJECT}}", $subject, $template);
+      $template = str_replace("{{MESSAGE}}", $_POST['message'] ?? "New form submitted from The Point", $template);
 
-  // Debug SMTP functions.
-  // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+      $message = "";
 
-  // SMTP Gmail Host.
-  $mail->Host = 'smtp.gmail.com';
-  $mail->Port = 587;
+      foreach($_POST['form'] as $input => $value) {
 
-  // Set the encryption mechanism to use STARTTLS.
-  $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        // Sanitize the user input.
+        $value = htmlspecialchars(strip_tags($value));
 
-  // Authenticate SMTP.
-  $mail->SMTPAuth = true;
+        $message .= "<p style='font-family: sans-serif; font-size: 12px; font-weight: bold; text-transform: uppercase; margin: 0; margin-bottom: 5px;'>{$input}</p>";
+        $message .= "<p style='font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; margin-bottom: 20px;'>{$value}</p>";
 
-  // Login to the SMTP authenticator.
-  $mail->Username = 'no-reply@lovemypoint.com';
-  $mail->Password = 'lovemypoint';
+      }
 
-  // This is who the email is being sent from.
-  $mail->setFrom('no-reply@lovemypoint.com', 'The Point Pub & Grill');
+      $template = str_replace("{{CONTENT}}", $message, $template);
 
-  // Send the email to these addresses.
-  $mail->addAddress('thoevet@lovemypoint.com');
-  $mail->addAddress('ctouzet@lovemypoint.com');
-  $mail->addAddress('dlewis@lovemypoint.com');
-  $mail->addAddress('rburns@lovemypoint.com');
-  $mail->addAddress('katied@lovemypoint.com');
-  $mail->addAddress('jarmstrong@lovemypoint.com');
+      try {
 
-  // CC Myself on all emails.
-  $mail->addCC('sebastian@seedscs.com', 'Sebastian Inman');
+        // SMTP Mailer.
+        $mail->isSMTP();
 
-  $mail->isHTML(true);
-  $mail->Subject = $subject;
-  $mail->Body = $message;
+        // Debug SMTP functions.
+        // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
 
-  $mail->send();
-  echo "success";
+        // SMTP Gmail Host.
+        $mail->Host = 'smtp.gmail.com';
+        $mail->Port = 587;
 
-} catch (Exception $e) {
+        // Set the encryption mechanism to use STARTTLS.
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 
-  echo $mail->ErrorInfo;
+        // Authenticate SMTP.
+        $mail->SMTPAuth = true;
+
+        // Login to the SMTP authenticator.
+        $mail->Username = 'no-reply@lovemypoint.com';
+        $mail->Password = 'lovemypoint';
+
+        // This is who the email is being sent from.
+        $mail->setFrom('no-reply@lovemypoint.com', 'The Point Pub & Grill');
+
+        // Send the email to these addresses.
+        $mail->addAddress('thoevet@lovemypoint.com');
+        $mail->addAddress('ctouzet@lovemypoint.com');
+        $mail->addAddress('dlewis@lovemypoint.com');
+        $mail->addAddress('rburns@lovemypoint.com');
+        $mail->addAddress('katied@lovemypoint.com');
+        $mail->addAddress('jarmstrong@lovemypoint.com');
+
+        // CC Myself on all emails.
+        $mail->addCC('sebastian@seedscs.com', 'Sebastian Inman');
+
+        $mail->isHTML(true);
+        $mail->Subject = $subject;
+        $mail->Body = $message;
+
+        $mail->send();
+        echo "success";
+
+      } catch (Exception $e) {
+
+        echo $mail->ErrorInfo;
+
+      }
+
+    }else{
+
+      echo "Error: Captcha score too low - possibly a bot.";
+
+    }
+
+  }else{
+
+    echo "Error: Captcha did not pass - possibly a bot.";
+
+  }
+
+  curl_close($curl);
+
+}else{
+
+  echo "Error: No Captcha token provided";
 
 }

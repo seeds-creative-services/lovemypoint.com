@@ -77,5 +77,6 @@
 </footer>
 
 <!-- Load the child theme scripts. -->
+<script src="https://www.google.com/recaptcha/api.js?render=6LdqXMsUAAAAAEUOxcZt2rYkV92X0RGuLIIRF0y2"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="<?php echo get_stylesheet_directory_uri() . "/assets/dist/js/script.js" ?>"></script>

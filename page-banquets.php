@@ -86,7 +86,7 @@ get_header("light"); ?>
 
       <h2 class="text-center">Make a Reservation</h2>
 
-      <form class="mb-8" method="POST" action="<?php echo get_stylesheet_directory_uri(); ?>/send-email.php" onsubmit="SEEDS.SubmitForm(event);">
+      <form id="events-form" class="mb-8 disabled" method="POST" action="<?php echo get_stylesheet_directory_uri(); ?>/send-email.php" onsubmit="SEEDS.SubmitForm(event);" disabled>
 
         <input type="hidden" name="subject" value="New banquet form submission from The Point">
         <input type="hidden" name="message" value="The banquet form was submitted on The Point. Review the message below.">
