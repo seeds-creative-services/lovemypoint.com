@@ -22,6 +22,9 @@ $message = "";
 
 foreach($_POST['form'] as $input => $value) {
 
+  // Sanitize the user input.
+  $value = htmlspecialchars(strip_tags($value));
+
   $message .= "<p style='font-family: sans-serif; font-size: 12px; font-weight: bold; text-transform: uppercase; margin: 0; margin-bottom: 5px;'>{$input}</p>";
   $message .= "<p style='font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; margin-bottom: 20px;'>{$value}</p>";
 
