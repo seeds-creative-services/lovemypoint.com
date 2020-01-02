@@ -118,8 +118,8 @@ if(strpos($key, "theme_colors_") === 0) { ?> --<?php echo $key; ?>: <?php echo "
 
             <strong class="block mt-4">Bend</strong>
             <p class="font-semibold">
-              <a href="tel:5418164395">
-                <i class="fas fa-phone mr-2"></i>541-816-4395
+              <a href="tel:5417976828">
+                <i class="fas fa-phone mr-2"></i>541-797-6828
               </a>
             </p>
 
