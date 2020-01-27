@@ -34,17 +34,26 @@ get_header('light'); ?>
 
 <section class="sc sc-light text-center">
 
-  <ul id="menu-quicklinks" class="flex flex-row -mx-6 justify-center flex-wrap z-10 px-2 lg:px-0">
-    <li><button class="inline-flex py-3 px-4 lg:px-6" onclick="SEEDS.ScrollToElement('#starters');"><h6>Starters</h6></button></li>
-    <li><button class="inline-flex py-3 px-4 lg:px-6" onclick="SEEDS.ScrollToElement('#sandwiches');"><h6>Sandwiches</h6></button></li>
-    <li><button class="inline-flex py-3 px-4 lg:px-6" onclick="SEEDS.ScrollToElement('#burgers');"><h6>Burgers</h6></button></li>
-    <li><button class="inline-flex py-3 px-4 lg:px-6" onclick="SEEDS.ScrollToElement('#favorites');"><h6>Favorites</h6></button></li>
-    <li><button class="inline-flex py-3 px-4 lg:px-6" onclick="SEEDS.ScrollToElement('#sides');"><h6>Sides</h6></button></li>
-    <li><button class="inline-flex py-3 px-4 lg:px-6" onclick="SEEDS.ScrollToElement('#salads');"><h6>Salads</h6></button></li>
-    <li><button class="inline-flex py-3 px-4 lg:px-6" onclick="SEEDS.ScrollToElement('#pizza');"><h6>Pizza</h6></button></li>
-    <li><button class="inline-flex py-3 px-4 lg:px-6" onclick="SEEDS.ScrollToElement('#desserts');"><h6>Desserts</h6></button></li>
-    <li><button class="inline-flex py-3 px-4 lg:px-6" onclick="SEEDS.ScrollToElement('#cocktails');"><h6>Cocktails</h6></button></li>
-    <li><button class="inline-flex py-3 px-4 lg:px-6" onclick="SEEDS.ScrollToElement('#tap');"><h6>Tap List</h6></button></li>
+  <ul id="menu-quicklinks" class="flex flex-row -mx-6 align-middle justify-center flex-wrap z-10 px-2 lg:px-0">
+    <li>
+      <select class="h-12 rounded border-brand-anvil border-solid border-2" id="select-location" onchange="SEEDS.SetLocation(this.value)">
+        <option value="" selected disabled>Select your location:</option>
+        <option value="central-point">Central Point, OR</option>
+        <option value="medford">Medford, OR</option>
+        <option value="bend">Bend, OR</option>
+      </select>
+    </li>
+    <li data-locations='["central-point", "medford", "bend"]'><button class="inline-flex py-3 px-4 lg:px-6" onclick="SEEDS.ScrollToElement('#starters');"><h6>Starters</h6></button></li>
+    <li data-locations='["central-point", "medford", "bend"]'><button class="inline-flex py-3 px-4 lg:px-6" onclick="SEEDS.ScrollToElement('#sandwiches');"><h6>Sandwiches</h6></button></li>
+    <li data-locations='["central-point", "medford", "bend"]'><button class="inline-flex py-3 px-4 lg:px-6" onclick="SEEDS.ScrollToElement('#burgers');"><h6>Burgers</h6></button></li>
+    <li data-locations='["central-point", "medford", "bend"]'><button class="inline-flex py-3 px-4 lg:px-6" onclick="SEEDS.ScrollToElement('#favorites');"><h6>Favorites</h6></button></li>
+    <li data-locations='["central-point", "medford", "bend"]'><button class="inline-flex py-3 px-4 lg:px-6" onclick="SEEDS.ScrollToElement('#sides');"><h6>Sides</h6></button></li>
+    <li data-locations='["central-point", "medford", "bend"]'><button class="inline-flex py-3 px-4 lg:px-6" onclick="SEEDS.ScrollToElement('#salads');"><h6>Salads</h6></button></li>
+    <li data-locations='["central-point", "medford"]'><button class="inline-flex py-3 px-4 lg:px-6" onclick="SEEDS.ScrollToElement('#pizza');"><h6>Pizza</h6></button></li>
+    <li data-locations='["bend"]'><button class="inline-flex py-3 px-4 lg:px-6" onclick="SEEDS.ScrollToElement('#vegan');"><h6>Vegan</h6></button></li>
+    <li data-locations='["central-point", "medford", "bend"]'><button class="inline-flex py-3 px-4 lg:px-6" onclick="SEEDS.ScrollToElement('#desserts');"><h6>Desserts</h6></button></li>
+    <li data-locations='["central-point", "medford", "bend"]'><button class="inline-flex py-3 px-4 lg:px-6" onclick="SEEDS.ScrollToElement('#cocktails');"><h6>Cocktails</h6></button></li>
+    <li data-locations='["central-point", "medford", "bend"]'><button class="inline-flex py-3 px-4 lg:px-6" onclick="SEEDS.ScrollToElement('#tap');"><h6>Tap List</h6></button></li>
   </ul>
 
   <div class="container">
@@ -53,7 +62,7 @@ get_header('light'); ?>
 
       <div class="w-full lg:w-1/2 inline-flex flex-col lg:px-12">
 
-        <div id="starters">
+        <div id="starters" data-locations='["central-point", "medford", "bend"]'>
 
           <h2>Starters</h2>
 
@@ -92,11 +101,11 @@ get_header('light'); ?>
             <p>Jumbo onion rings fried to a golden brown and served with Sriracha ranch.</p>
           </div>
 
+          <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
+
         </div>
 
-        <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
-
-        <div id="burgers">
+        <div id="burgers" data-locations='["central-point", "medford", "bend"]'>
 
           <h2>Burgers</h2>
           <p>All burgers are served with your choice of fries or house salad.<br>
@@ -149,11 +158,11 @@ get_header('light'); ?>
             </p>
           </div>
 
+          <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
+
         </div>
 
-        <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
-
-        <div id="sides">
+        <div id="sides" data-locations='["central-point", "medford", "bend"]'>
 
           <h2>Sides</h2>
 
@@ -195,7 +204,7 @@ get_header('light'); ?>
 
         <div class="block lg:hidden mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
 
-        <div id="sandwiches">
+        <div id="sandwiches" data-locations='["central-point", "medford", "bend"]'>
 
           <h2>Sandwiches</h2>
           <p>All sandwiches are served with your choice of fries or house salad.<br>
@@ -249,11 +258,11 @@ get_header('light'); ?>
             <p>Sliced corned beef with melted Swiss cheese, 1000 island, and sauerkraut on grilled marble rye.</p>
           </div>
 
+          <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
+
         </div>
 
-        <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
-
-        <div id="favorites">
+        <div id="favorites" data-locations='["central-point", "medford", "bend"]'>
 
           <h2>Point Favorites</h2>
 
@@ -310,7 +319,7 @@ get_header('light'); ?>
 
     <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
 
-    <div id="salads">
+    <div id="salads" data-locations='["central-point", "medford", "bend"]'>
 
       <div class="flex flex-col lg:flex-row lg:-mx-12">
 
@@ -324,12 +333,13 @@ get_header('light'); ?>
               <div>
                 <h4 class="pb-1">
                   <sup class="text-sm inline-flex justify-center items-center pr-2 text-center font-medium">GF</sup>
-                  Baby Mixed Green Salad<br><strong class="font-semibold text-lg">Full $11.00 / Half $6.50</strong>
+                  Baby Mixed Green Salad<br><strong class="font-semibold text-lg">Full $11.00 / Half $7.00</strong>
                 </h4>
                 <p>Mixed greens, dried cranberries, tomatoes, carrots, sliced red onion, and blue cheese crumbles with a balsamic vinaigrette dressing.<br>
                   <small>
                     <em>Add grilled chicken ... <strong class="font-semibold">$4.00</strong></em><br>
-                    <em>Add grilled Sockeye salnib ... <strong class="font-semibold">$6.00</strong></em>
+                    <em>Add grilled Sockeye Salmon ... <strong class="font-semibold">$6.00</strong></em><br>
+                    <em>Add Ahi Tuna ... <strong class="font-semibold">$6.00</strong></em>
                   </small>
                 </p>
               </div>
@@ -338,15 +348,9 @@ get_header('light'); ?>
             <div class="w-full lg:w-1/3 inline-flex flex-col lg:px-12">
               <div class="mt-8 lg:mt-0">
                 <h4 class="pb-1">
-                  <sup class="text-sm inline-flex justify-center items-center pr-2 text-center font-medium">GF</sup>
-                  Mediterranean Salad<strong class="pl-4 font-semibold text-lg">$13.00</strong>
+                  Buffalo Bleu Salad<strong class="pl-4 font-semibold text-lg">$15.00</strong>
                 </h4>
-                <p>Spinach, kalamata olives, artichokes, sun- dried tomato, red onion, and feta cheese. Topped with house made balsamic vinaigrette.<br>
-                  <small>
-                    <em>Add grilled chicken ... <strong class="font-semibold">$4.00</strong></em><br>
-                    <em>Add grilled Sockeye salnib ... <strong class="font-semibold">$6.00</strong></em>
-                  </small>
-                </p>
+                <p>Romaine lettuce with carrots, tomatoes, red onion, and bleu cheese crumbles. Topped with your choice of crispy or grilled buffalo style chicken. Served with bleu cheese dressing.</p>
               </div>
             </div>
 
@@ -371,7 +375,8 @@ get_header('light'); ?>
                 <p>Romaine lettuce, shredded parmesan cheese and herb croutons with classic Caesar dressing.<br>
                   <small>
                     <em>Add grilled chicken ... <strong class="font-semibold">$4.00</strong></em><br>
-                    <em>Add grilled Sockeye salnib ... <strong class="font-semibold">$6.00</strong></em>
+                    <em>Add grilled Sockeye Salmon ... <strong class="font-semibold">$6.00</strong></em><br>
+                    <em>Add Ahi Tuna ... <strong class="font-semibold">$6.00</strong></em>
                   </small>
                 </p>
               </div>
@@ -400,11 +405,11 @@ get_header('light'); ?>
 
       </div>
 
+      <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
+
     </div>
 
-    <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
-
-    <div id="pizza">
+    <div id="pizza" data-locations='["central-point", "medford"]'>
 
       <div class="flex flex-col lg:flex-row lg:-mx-12">
 
@@ -636,11 +641,157 @@ get_header('light'); ?>
 
       </div>
 
+      <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
+
     </div>
 
-    <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
+    <div id="vegan" data-locations='["bend"]'>
 
-    <div id="desserts">
+      <div class="flex flex-col lg:flex-row lg:-mx-12">
+
+        <div class="w-full inline-flex flex-col lg:px-12">
+
+          <h2>Vegan Menu</h2>
+
+          <div class="w-full lg:w-1/2 mx-auto inline-flex flex-col justify-center">
+            <div class="mt-2 border-brand-mahogany border-8 border-double p-6">
+              <h4 class="pb-1">Our Famous Vegan Mac &amp; Cheese<strong class="pl-4 font-semibold text-lg">$18.00</strong></h4>
+              <p>Our famous vegan macaroni and cheese tossed with vegan chicken and seasonal vegetable. Served with garlic bread.</p>
+            </div>
+          </div>
+
+          <div class="flex flex-col lg:flex-row lg:-mx-12">
+
+            <div class="w-full lg:w-1/2 inline-flex flex-col lg:px-12 mt-6 lg:mt-12">
+              <div>
+                <h4 class="pb-1">
+                  Vegan Philly Cheesesteak<strong class="pl-4 font-semibold text-lg">$17.00</strong>
+                </h4>
+                <p>Thin sliced vegan beef with sautéed onions, peppers and mushrooms with melted vegan mozzarella cheese and vegan chipotle aioli on a toasted hoagie roll. Served with your choice of fries.</p>
+              </div>
+            </div>
+
+            <div class="w-full lg:w-1/2 inline-flex flex-col lg:px-12 mt-4 lg:mt-8">
+              <div>
+                <h4 class="pb-1">
+                Vegan Mac Daddy Patty Melt<strong class="pl-4 font-semibold text-lg">$18.00</strong>
+                </h4>
+                <p>A Beyond burger on grilled sourdough with caramelized onions, melted mozzarella, BBQ sauce and our famous vegan macaroni and cheese. Served with your choice of fries.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="flex flex-col lg:flex-row lg:-mx-12">
+
+            <div class="w-full lg:w-1/2 inline-flex flex-col lg:px-12 mt-4 lg:mt-8">
+              <div>
+                <h4 class="pb-1">
+                Stadium Style Vegan Chicken Nachos<strong class="pl-4 font-semibold text-lg">$14.00</strong>
+                </h4>
+                <p>House made chips topped with vegan cheddar and mozzarella cheese, vegan chicken, black beans, pico de gallo, and jalapenos.</p>
+              </div>
+            </div>
+
+            <div class="w-full lg:w-1/2 inline-flex flex-col lg:px-12 mt-4 lg:mt-8">
+              <div>
+                <h4 class="pb-1">
+                Bordertown Vegan Taco Salad<strong class="pl-4 font-semibold text-lg">$17.00</strong>
+                </h4>
+                <p>A tortilla bowl fried to perfection filled with chopped romaine, corn, black beans, tomatoes, fiesta tortilla strips and shredded vegan mozzarella cheese. Topped with your choice of grilled vegan chicken or seasoned vegan ground beef.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="flex flex-col lg:flex-row lg:-mx-12">
+
+            <div class="w-full lg:w-1/2 inline-flex flex-col lg:px-12 mt-4 lg:mt-8">
+              <div>
+                <h4 class="pb-1">
+                Maui Luau Vegan Chicken Sandwich<strong class="pl-4 font-semibold text-lg">$17.00</strong>
+                </h4>
+                <p>Savory grilled vegan chicken tossed in teriyaki sauce on a bed of lettuce, tomato, and red onion. Topped with sautéed mushrooms, pineapple, and melted mozzarella cheese on grilled sourdough bread. Served with your choice of fries.</p>
+              </div>
+            </div>
+
+            <div class="w-full lg:w-1/2 inline-flex flex-col lg:px-12 mt-4 lg:mt-8">
+              <div>
+                <h4 class="pb-1">
+                Vegan Caesar Salad<br><strong class="font-semibold text-lg">Full $12.00 / Half $8.00</strong>
+                </h4>
+                <p>Romaine lettuce, shredded vegan mozzarella cheese, and vegan sourdough croutons tossed in our house made vegan Caesar dressing.<br>
+                  <small>
+                    <em>Add vegan chicken ... <strong class="font-semibold">$4.00</strong></em><br>
+                  </small>
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="flex flex-col lg:flex-row lg:-mx-12">
+
+            <div class="w-full lg:w-1/2 inline-flex flex-col lg:px-12 mt-4 lg:mt-8">
+              <div>
+                <h4 class="pb-1">
+                Southern Style Vegan Patty Melt<strong class="pl-4 font-semibold text-lg">$16.00</strong>
+                </h4>
+                <p>A Beyond burger on grilled marbled rye bread with melted vegan mozzarella and cheddar cheese. Topped with BBQ sauce, jalapenos and caramelized onions. Served with your choice of fries.</p>
+              </div>
+            </div>
+
+            <div class="w-full lg:w-1/2 inline-flex flex-col lg:px-12 mt-4 lg:mt-8">
+              <div>
+                <h4 class="pb-1">
+                Blazing Buffalo Vegan Mozzarella Melt<strong class="pl-4 font-semibold text-lg">$17.00</strong>
+                </h4>
+                <p>Vegan chicken tossed in buffalo sauce, with melted mozzarella on grilled sourdough. Topped with lettuce, tomato, red onion and pickles. Served with your choice of fries.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="border-brand-sunflower border-4 border-double p-6 lg:-mx-12 mt-4 lg:mt-8">
+
+            <h3>On Point Vegan Tacos<strong class="pl-4 font-semibold text-lg">$15.00</strong><br><p>( No mixing and matching )</p></h3>
+
+            <div class="flex flex-col lg:flex-row">
+
+              <div class="w-full lg:w-1/3 inline-flex flex-col lg:px-12 mt-0">
+                <div>
+                  <h4 class="pb-1">Kona Style Vegan Chicken</h4>
+                  <p>Three tacos with grilled vegan chicken, pineapple and mushrooms. Topped with shredded cabbage, pico de gallo, and a teriyaki drizzle.</p>
+                </div>
+              </div>
+
+              <div class="w-full lg:w-1/3 inline-flex flex-col lg:px-12 mt-4 lg:mt-0">
+                <div>
+                  <h4 class="pb-1">Buffalo Vegan Mozzarella</h4>
+                  <p>Three tacos with vegan chicken tossed in buffalo sauce. Topped with vegan mozzarella, shredded cabbage and pico de gallo.</p>
+                </div>
+              </div>
+
+              <div class="w-full lg:w-1/3 inline-flex flex-col lg:px-12 mt-4 lg:mt-0">
+                <div>
+                  <h4 class="pb-1">Vegan Chicken Fajita</h4>
+                  <p>Three tacos with fajita seasoned bell peppers, onions, and vegan chicken. Topped with shredded cabbage, pico de gallo, and tomatillo salsa.</p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
+
+    </div>
+
+    <div id="desserts" data-locations='["central-point", "medford", "bend"]'>
 
       <div class="flex flex-col lg:flex-row lg:-mx-12">
 
@@ -698,11 +849,11 @@ get_header('light'); ?>
 
       </div>
 
+      <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
+
     </div>
 
-    <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
-
-    <div id="cocktails">
+    <div id="cocktails" data-locations='["central-point", "medford", "bend"]'>
 
       <div class="flex flex-col lg:flex-row lg:-mx-12">
 
@@ -838,11 +989,11 @@ get_header('light'); ?>
 
       </div>
 
+      <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
+
     </div>
 
-    <div class="mt-16 pt-12 border-t-4 border-double border-brand-anvil"></div>
-
-    <div id="tap">
+    <div id="tap" data-locations='["central-point", "medford", "bend"]'>
 
       <div class="flex flex-col lg:flex-row lg:-mx-12">
 

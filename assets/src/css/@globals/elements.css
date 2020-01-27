@@ -5,6 +5,10 @@
   border-radius: 0.2rem;
 }
 
+select {
+  margin: 0;
+}
+
 .sc {
 
   @apply relative w-full z-0;
@@ -125,6 +129,10 @@ Dividers / Spacers
   background-color: var(--theme_colors_background);
   position: sticky;
   top: 1rem;
+  li {
+    display: inline-flex;
+    align-items: center;
+  }
   @media screen and (max-width: 600px) {
     top: calc(var(--var-header-height) / 2);
     justify-content: flex-start;

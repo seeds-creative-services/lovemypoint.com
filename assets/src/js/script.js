@@ -14,7 +14,9 @@
 
 
   SEEDS.reCAPTCHAToken = 'null'
+  SEEDS.Location = $.cookie('location') || 'central-point'
 
+  console.log(SEEDS.Location)
 
   // Load the recaptcha
   grecaptcha.ready(function() {
@@ -34,7 +36,9 @@
   $(window).on('load', function(event) {
 
     // Show the Central Point menus by default.
-    SEEDS.ShowLocationMenu('central-point')
+    SEEDS.ShowLocationMenu(SEEDS.Location)
+
+    SEEDS.SetLocation(SEEDS.Location)
 
     if(window.location.hash) {
 
@@ -150,6 +154,34 @@
     $('.location-menu[menu-location="' + location + '"]').removeClass('hidden').addClass('active flex')
 
   };
+
+
+  SEEDS.SetLocation = function(location) {
+
+    SEEDS.Location = location
+
+    $.cookie('location', SEEDS.Location)
+
+    $('#select-location').val(SEEDS.Location)
+
+    $('[data-locations]').each((i) => {
+
+      let $location = $('[data-locations]').eq(i)
+      let locations = JSON.parse($location.attr('data-locations'))
+
+      if(locations.includes(SEEDS.Location)) {
+
+        $location.show()
+
+      }else{
+
+        $location.hide()
+
+      }
+
+    })
+
+  }
 
 
 })((window.SEEDS = window.SEEDS || {}), jQuery)

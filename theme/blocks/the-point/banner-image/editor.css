@@ -1,0 +1,95 @@
+.sidebar-options-set {
+  margin-bottom: 1.5rem;
+  width: 100%;
+  clear: both;
+}
+
+.wp-block[data-type="the-point/banner-image"] {
+  font-family: sans-serif;
+}
+
+.wp-block[data-type="the-point/banner-image"] .banner-image {
+  padding: 1rem 3rem;
+  position: relative;
+  min-height: 20rem;
+  overflow: hidden;
+  display: block;
+  width: 100%;
+}
+
+.wp-block[data-type="the-point/banner-image"] .banner-image.has-overlay::after {
+  background-color: inherit;
+  position: absolute;
+  content: '';
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+.wp-block[data-type="the-point/banner-image"] .banner-image figure {
+  background-image: url("../../../../../../plugins/seeds-blocks/images/placeholder-image.jpg");
+  background-position: center center;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+          background-size: cover;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+.wp-block[data-type="the-point/banner-image"] .banner-image video {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+.wp-block[data-type="the-point/banner-image"] .banner-image .block-content {
+  position: relative;
+  display: none;
+  z-index: 1;
+}
+
+.wp-block[data-type="the-point/banner-image"] .banner-image img {
+  max-width: -webkit-calc(100% + 2rem);
+  max-width: -moz-calc(100% + 2rem);
+  max-width: calc(100% + 2rem);
+  width: -webkit-calc(100% + 2rem);
+  width: -moz-calc(100% + 2rem);
+  width: calc(100% + 2rem);
+  position: relative;
+  margin: -1rem;
+  z-index: 0;
+}
+
+.wp-block[data-type="the-point/banner-image"] .banner-image .editor-rich-text h2,
+.wp-block[data-type="the-point/banner-image"] .banner-image .editor-rich-text h3,
+.wp-block[data-type="the-point/banner-image"] .banner-image .editor-rich-text h4 {
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.wp-block[data-type="the-point/banner-image"] .block-list-appender__toggle {
+  outline-color: rgba(255, 255, 255, 0.5);
+  color: #FFFFFF;
+}
+
+.wp-block[data-type="the-point/banner-image"] .block-list-appender__toggle:hover:enabled, .wp-block[data-type="the-point/banner-image"] .block-list-appender__toggle:focus:enabled {
+  background-color: rgba(255, 255, 255, 0.365) !important;
+  outline-color: rgba(255, 255, 255, 0.5) !important;
+  -webkit-box-shadow: none !important;
+     -moz-box-shadow: none !important;
+          box-shadow: none !important;
+}
