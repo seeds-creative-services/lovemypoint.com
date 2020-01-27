@@ -164,6 +164,8 @@
 
     $('#select-location').val(SEEDS.Location)
 
+    SEEDS.ShowLocationMenu(location)
+
     $('[data-locations]').each((i) => {
 
       let $location = $('[data-locations]').eq(i)
