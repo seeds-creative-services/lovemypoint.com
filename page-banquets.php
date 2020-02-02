@@ -151,7 +151,15 @@ get_header("light"); ?>
               <textarea class="h-12 p-4 h-32 rounded border-brand-anvil border-solid border-2" id="message" name="form[message]"></textarea>
             </div>
           </div>
-          <button class="btn btn-primary float-left text-white mt-8" type="submit">Make Reservation</button>
+        </div>
+
+        <div class="flex flex-wrap mt-8">
+          <div class="order-2 w-full md:order-1 md:w-1/4">
+            <button class="btn btn-primary w-full text-white" type="submit">Submit</button>
+          </div>
+          <div class="order-1 w-full mb-4 md:order-2 md:w-3/4 md:mb-0">
+            <small class="info">We'll get back to you as soon as possible. Please be sure to check your "Junk" folder for our response.</small>
+          </div>
         </div>
 
       </form>

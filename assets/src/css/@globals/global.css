@@ -59,3 +59,9 @@ a:not(.btn):not(.nav-link) {
   @apply ml-auto mr-auto pl-8 pr-8;
   max-width: var(--var-wrapper-width);
 }
+
+.info {
+  @apply block pl-6 text-left;
+  color: var(--color-branding-secondary-medium-gray);
+  line-height: 1.65;
+}
