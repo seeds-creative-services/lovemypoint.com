@@ -15,7 +15,8 @@ get_header("light"); ?>
 <section class="sc sc-light">
   <div class="container">
 
-    <h2 class="text-center">Host Your Event with Us</h2>
+    <h2 class="text-center pb-0">Host Your Event with Us</h2>
+    <h6 class="text-center pb-10">All reservations are for our Central Point location only</h6>
     <p class="lg:max-w-6xl mx-auto text-center">The Point Pub and Grill is a classic family oriented Pub and Grill featuring upscale traditional cuisine with personalized flair. We offer full service dining, an extensive beer, wine, and cocktail selection, and interactive banquet facilities. Visit us to meet new friends, enjoy the company of family, or host your next best party!</p>
 
     <div class="flex flex-wrap -mx-2 relative mt-6 lg:mt-12">
@@ -79,12 +80,13 @@ get_header("light"); ?>
   <div class="container">
 
     <div class="w-full lg:w-3/5 mx-auto bg-brand-mahogany -mt-40 text-white text-center px-6 lg:px-20 py-12 lg:py-12 relative z-20">
-      <h6 class="pb-0">Now Accepting Reservations! Fill out the form below and submit. Within 48 hours our coordinator will contact you personally to confirm your reservation, answer questions, and offer any help needed.</h6>
+      <h6 class="pb-0">Now Accepting Reservations at our Central Point location! Fill out the form below and submit. Within 48 hours our coordinator will contact you personally to confirm your reservation, answer questions, and offer any help needed.</h6>
     </div>
 
     <div class="w-full lg:w-2/5 mx-auto pt-16 lg:pt-24" id="make-a-reservation">
 
-      <h2 class="text-center">Make a Reservation</h2>
+      <h2 class="text-center pb-0">Make a Reservation</h2>
+      <h6 class="text-center pb-10">All reservations are for our Central Point location only</h6>
 
       <form id="events-form" class="mb-8 disabled" method="POST" action="<?php echo get_stylesheet_directory_uri(); ?>/send-email.php" onsubmit="SEEDS.SubmitForm(event);" disabled>
 
