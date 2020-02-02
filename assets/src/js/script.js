@@ -14,9 +14,28 @@
 
 
   SEEDS.reCAPTCHAToken = 'null'
+
   SEEDS.Location = $.cookie('location') || 'central-point'
 
-  console.log(SEEDS.Location)
+  SEEDS.LAT = $.cookie('latitude')  || undefined
+  SEEDS.LON = $.cookie('longitude') || undefined
+
+
+  SEEDS.Locations = {
+    'central-point': {
+      lat:  42.3754584,
+      lon: -122.9175355
+    },
+    'medford': {
+      lat:  42.3115587,
+      lon: -122.8564846
+    },
+    'bend': {
+      lat:  44.0570058,
+      lon: -121.3161847
+    }
+  }
+
 
   // Load the recaptcha
   grecaptcha.ready(function() {
@@ -34,6 +53,28 @@
 
 
   $(window).on('load', function(event) {
+
+    // SEEDS.LocationPrompt(function(response) {
+
+    //   if(response !== 'error') {
+
+    //     SEEDS.LAT = response.coords.latitude
+    //     SEEDS.LON = response.coords.longitude
+
+    //     Object.keys(SEEDS.Locations).map(function(location) {
+
+    //       console.log(location)
+    //       SEEDS.CalculateDistance(
+    //         [ SEEDS.LAT, SEEDS.LON ], 
+    //         [ SEEDS.Locations[location].lat, 
+    //           SEEDS.Locations[location].lon ])
+    //       console.log('\n')
+
+    //     })
+
+    //   }
+
+    // })
 
     // Show the Central Point menus by default.
     SEEDS.ShowLocationMenu(SEEDS.Location)
@@ -92,6 +133,7 @@
 
         error: function(response) {
 
+          alert("There was an error, please try again soon.")
           console.error(response)
 
         }
@@ -156,13 +198,70 @@
   };
 
 
+  SEEDS.LocationPrompt = function(callback) {
+
+    if(navigator.geolocation) {
+
+      function LocationSuccess(position) {
+
+        return callback(position)
+
+      }
+
+      function LocationError() {
+
+        return callback('error')
+
+      }
+
+      navigator.geolocation.getCurrentPosition(LocationSuccess, LocationError)
+
+    }else{
+
+      return callback('error')
+
+    }
+
+  }
+
+
+  SEEDS.CalculateDistance = function(start, end, callback) {
+
+    console.log('start', start)
+    console.log('end', end)
+
+    $.ajax({
+
+      url: `https://router.project-osrm.org/route/v1/driving/${start[1]},${start[0]};${end[1]},${end[0]}`,
+
+      success: function(response) {
+
+        console.log(response)
+
+      },
+
+      error: function(response) {
+
+        console.error(response)
+
+      }
+
+    })
+
+  }
+
+
   SEEDS.SetLocation = function(location) {
 
     SEEDS.Location = location
 
-    $.cookie('location', SEEDS.Location)
+    $.cookie('location', SEEDS.Location, { expires: 7, path: '/' })
 
     $('#select-location').val(SEEDS.Location)
+
+    $('.active-location').removeClass('active-location')
+    $(`#location-${SEEDS.Location}`).addClass('active-location')
+
 
     SEEDS.ShowLocationMenu(location)
 

@@ -31,6 +31,7 @@ module.exports = {
         anvil: '#DCDFE5',
         brick: '#522A27',
         mahogany: '#9E4634',
+        clay: '#A65646',
         sunflower: '#E08E45'
       }
 

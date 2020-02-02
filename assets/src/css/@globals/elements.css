@@ -154,3 +154,19 @@ Dividers / Spacers
     }
   }
 }
+
+.active-location {
+  box-shadow: inset 0 0 0 4px #C45640;
+  &::before {
+    @apply absolute uppercase;
+    content: 'Your Location';
+    background-color: #C45640;
+    transform: translate3d(-50%, -50%, 0);
+    letter-spacing: 0.12px;
+    padding: 0.5rem 1rem;
+    font-size: 0.865rem;
+    font-weight: 600;
+    left: 50%;
+    top: 0;
+  }
+}

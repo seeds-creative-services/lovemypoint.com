@@ -65,3 +65,9 @@ a:not(.btn):not(.nav-link) {
   color: var(--color-branding-secondary-medium-gray);
   line-height: 1.65;
 }
+
+.grecaptcha-badge {
+  pointer-events: none !important;
+  visbility: hidden !important;
+  opacity: 0 !important;
+}
