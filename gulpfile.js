@@ -130,8 +130,7 @@ const tasks = {
 
 }
 
-exports.development = series(tasks.env.development, tasks.compile.css, tasks.compile.js, tasks.watch)
-exports.build = series(tasks.env.production, tasks.compile.css, tasks.compile.js)
-exports.production = series(tasks.env.production, tasks.compile.css, tasks.compile.js)
+exports.dev = exports.development = series(tasks.env.development, tasks.compile.css, tasks.compile.js, tasks.watch)
+exports.pro = exports.production  = series(tasks.env.production, tasks.compile.css, tasks.compile.js)
 
-exports.default = config.env === 'production' ? exports.build : exports.development
+exports.default = config.env === 'production' ? exports.pro : exports.dev

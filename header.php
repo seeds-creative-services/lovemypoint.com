@@ -57,23 +57,32 @@ $page_url = home_url(add_query_arg(array(), $wp->request)); ?>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="mssmarttagspreventparsing" content="true">
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-51486505-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-51486505-1');
+</script>
+
 <!-- Import Font Awesome icons. -->
 <script src="https://kit.fontawesome.com/29f0ff1eb5.js" crossorigin="anonymous"></script>
 
 <!-- Load the child theme stylesheet. -->
 <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() . "/assets/dist/css/styles.css" ?>">
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-51486505-1"></script>
-<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());gtag('config', 'UA-51486505-1');</script>
+<!--<!-- Global site tag (gtag.js) - Google Analytics -->-->
+<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-51486505-1"></script>-->
+<!--<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}-->
+<!--gtag('js', new Date());gtag('config', 'UA-51486505-1');</script>-->
 
 <!-- Define custom CSS theme variables. -->
 <style>:root {<?php foreach(get_theme_mods() as $key => $value) {
 if(strpos($key, "theme_colors_") === 0) { ?> --<?php echo $key; ?>: <?php echo "{$value} !important;"; }}?> }</style>
 
 </head>
-<body>
+<body onload="SEEDS.Ready(event);">
 
   <header class="light" role="banner" id="page-header">
     <div class="container">

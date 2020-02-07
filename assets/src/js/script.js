@@ -1,13 +1,3 @@
-// This is a boilerplate created by Sebastian Inman
-// to help streamline the process of setting up an object-oriented
-// standalone Javascript plugin.
-
-// wrap the entire plugin in an anonymous function
-// that with three parameters passed into it:
-// 1. the name of the plugin / function you want to use as the namespace
-// 2. $ (or jQuery) for the use of jQuery inside the plugin
-// 3. undefined
-
 (function(SEEDS, $, undefined) {
 
   "use strict";
@@ -37,55 +27,35 @@
   }
 
 
-  // Load the recaptcha
-  grecaptcha.ready(function() {
-
-    grecaptcha.execute('6LdqXMsUAAAAAEUOxcZt2rYkV92X0RGuLIIRF0y2', {action: 'homepage'}).then(function(token) {
-
-      SEEDS.reCAPTCHAToken = token
-      
-      $('form').removeClass('disabled')
-      $('form').removeAttr('disabled')
-
-    });
-
-  });
-
-
   $(window).on('load', function(event) {
-
-    // SEEDS.LocationPrompt(function(response) {
-
-    //   if(response !== 'error') {
-
-    //     SEEDS.LAT = response.coords.latitude
-    //     SEEDS.LON = response.coords.longitude
-
-    //     Object.keys(SEEDS.Locations).map(function(location) {
-
-    //       console.log(location)
-    //       SEEDS.CalculateDistance(
-    //         [ SEEDS.LAT, SEEDS.LON ], 
-    //         [ SEEDS.Locations[location].lat, 
-    //           SEEDS.Locations[location].lon ])
-    //       console.log('\n')
-
-    //     })
-
-    //   }
-
-    // })
 
     // Show the Central Point menus by default.
     SEEDS.ShowLocationMenu(SEEDS.Location)
 
-    SEEDS.SetLocation(SEEDS.Location)
+    SEEDS.SetLocation(SEEDS.Location, false)
 
     if(window.location.hash) {
 
       SEEDS.ScrollToElement(window.location.hash)
 
     }
+
+    // Load the recaptcha
+    grecaptcha.ready(function() {
+
+      ga('send', 'event', 'captcha', 'ready');
+
+      grecaptcha.execute('6LdqXMsUAAAAAEUOxcZt2rYkV92X0RGuLIIRF0y2', {action: 'homepage'}).then(function(token) {
+
+        ga('send', 'event', 'captcha', 'generated');
+
+        SEEDS.reCAPTCHAToken = token
+
+        $('form').removeClass('disabled').removeAttr('disabled')
+
+      });
+
+    });
 
   })
 
@@ -101,6 +71,7 @@
 
     var element = $(event.target)
 
+    var form = element.attr('id')
     var method = element.attr("method")
     var data = element.serializeArray()
     var url = element.attr("action")
@@ -118,6 +89,11 @@
           if (response === "success") {
 
             alert("Your message was sent successfully!")
+
+            // Send data to GA.
+            gtag('event', 'submit', {
+              'event_category': form
+            });
 
             // Reset form elements.
             element.find('input textarea').val('')
@@ -227,9 +203,6 @@
 
   SEEDS.CalculateDistance = function(start, end, callback) {
 
-    console.log('start', start)
-    console.log('end', end)
-
     $.ajax({
 
       url: `https://router.project-osrm.org/route/v1/driving/${start[1]},${start[0]};${end[1]},${end[0]}`,
@@ -251,7 +224,17 @@
   }
 
 
-  SEEDS.SetLocation = function(location) {
+  SEEDS.SetLocation = function(location, send = true) {
+
+    if(send) {
+
+      // Send data to GA.
+      gtag('event', 'location', {
+        'event_category': location,
+        'event_label': 'set-location'
+      });
+
+    }
 
     SEEDS.Location = location
 
@@ -261,7 +244,6 @@
 
     $('.active-location').removeClass('active-location')
     $(`#location-${SEEDS.Location}`).addClass('active-location')
-
 
     SEEDS.ShowLocationMenu(location)
 
