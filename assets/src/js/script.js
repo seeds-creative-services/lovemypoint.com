@@ -235,7 +235,7 @@
     if(send) {
 
       // Send data to GA.
-      SEEDS.GA('location', location, 'set-location')
+      SEEDS.GA('set-location', 'location', location)
 
     }
 
