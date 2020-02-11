@@ -47,8 +47,6 @@
 
       grecaptcha.execute('6LdqXMsUAAAAAEUOxcZt2rYkV92X0RGuLIIRF0y2', {action: 'homepage'}).then(function(token) {
 
-        ga('send', 'event', 'captcha', 'generated');
-
         SEEDS.reCAPTCHAToken = token
 
         $('form').removeClass('disabled').removeAttr('disabled')
@@ -91,9 +89,7 @@
             alert("Your message was sent successfully!")
 
             // Send data to GA.
-            gtag('event', 'submit', {
-              'event_category': form
-            });
+            SEEDS.GA('submit', form, 'form-submitted')
 
             // Reset form elements.
             element.find('input textarea').val('')
@@ -224,15 +220,22 @@
   }
 
 
+  SEEDS.GA = function(type, category, label) {
+
+    gtag('event', type, {
+      'event_category': category,
+      'event_label': label
+    });
+
+  }
+
+
   SEEDS.SetLocation = function(location, send = true) {
 
     if(send) {
 
       // Send data to GA.
-      gtag('event', 'location', {
-        'event_category': location,
-        'event_label': 'set-location'
-      });
+      SEEDS.GA('location', location, 'set-location')
 
     }
 

@@ -1,10 +1,10 @@
 <div id="mobile-footer" class="lg:hidden">
   <div class="flex flex-row">
     <div class="w-1/2 py-4 pl-4 pr-2">
-      <a class="btn w-full text-white" href="https://www.toasttab.com/locations/f25e4c72-013e-4056-9824-9f7ab9f53a24" target="_blank">Order Online</a>
+      <a class="btn w-full text-white" href="https://www.toasttab.com/locations/f25e4c72-013e-4056-9824-9f7ab9f53a24" target="_blank" onclick="SEEDS.GA('click', 'mobile-cta', 'order-online');">Order Online</a>
     </div>
     <div class="w-1/2 py-4 pr-4 pl-2">
-      <a class="btn w-full text-white bg-brand-mahogany" href="/menu/">Our Menu</a>
+      <a class="btn w-full text-white bg-brand-mahogany" href="/menu/" onclick="SEEDS.GA('click', 'mobile-cta', 'view-menu');">Our Menu</a>
     </div>
   </div>
 </div>
