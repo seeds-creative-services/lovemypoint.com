@@ -67,37 +67,66 @@ get_header('light'); ?>
           <h2>Starters</h2>
 
           <div class="mt-2 border-brand-mahogany border-8 border-double p-6">
-            <h4 class="pb-1">"The Point" Irish Nachos<strong class="pl-4 font-semibold text-lg">$11.00</strong></h4>
+            <h4 class="pb-1">
+              "The Point" Irish Nachos
+              <strong class="pl-4 font-semibold text-lg" data-locations='["central-point", "medford"]'>$11.00</strong>
+              <strong class="pl-4 font-semibold text-lg" data-locations='["bend"]'>$12.00</strong>
+            </h4>
             <p>House fries topped with our cheese sauce, pico de gallo, meted cheddar cheese and wrapped in bacon.</p>
           </div>
 
           <div class="mt-8">
             <h4 class="pb-1">
               <sup class="text-sm inline-flex justify-center items-center pr-2 text-center font-medium">GF</sup>
-              "The Point" Poppers<strong class="pl-4 font-semibold text-lg">$11.00</strong>
+              "The Point" Poppers
+              <strong class="pl-4 font-semibold text-lg">$11.00</strong>
             </h4>
             <p>Baked jalapeño peppers stuffed with cream cheese, melted cheddar cheese and wrapped in bacon.</p>
           </div>
 
           <div class="mt-8">
-            <h4 class="pb-1">Crispy Calamari<strong class="pl-4 font-semibold text-lg">$12.50</strong></h4>
+            <h4 class="pb-1">
+              Crispy Calamari
+              <strong class="pl-4 font-semibold text-lg" data-locations='["central-point", "medford"]'>$12.50</strong>
+              <strong class="pl-4 font-semibold text-lg" data-locations='["bend"]'>$13.00</strong>
+            </h4>
             <p>Deep fried to perfection and served with zesty rémoulade.</p>
           </div>
 
           <div class="mt-8">
-            <h4 class="pb-1">Chicken Wings<strong class="pl-4 font-semibold text-lg">$12.50</strong></h4>
+            <h4 class="pb-1">
+              Chicken Wings
+              <strong class="pl-4 font-semibold text-lg">$12.50</strong>
+            </h4>
             <p>Your choice of jalapeño, bacon barbecue, or teriyaki sauce served with celery and carrots with ranch or blue cheese dressing.</p>
           </div>
 
+          <div class="mt-8" data-locations='["bend"]'>
+            <h4 class="pb-1">
+              <sup class="text-sm inline-flex justify-center items-center pr-2 text-center font-medium">GF</sup>
+              Fish Tacos
+              <strong class="pl-4 font-semibold text-lg">$15.50</strong>
+            </h4>
+            <p>Three tacos with seared cod or sesame peppered ahi, shredded cabbage, pico de gallo, and house made tequila lime-cilantro crème fraîche.<br>
+              <small><em>Add avocado ... <strong class="font-semibold">$1.00</strong></em></small>
+            </p>
+          </div>
+
           <div class="mt-8">
-            <h4 class="pb-1">Chicken Quesadilla<strong class="pl-4 font-semibold text-lg">$11.00</strong></h4>
+            <h4 class="pb-1">
+              Chicken Quesadilla
+              <strong class="pl-4 font-semibold text-lg">$11.00</strong>
+            </h4>
             <p>Chicken breast, pepper jack cheese, and avocado in a flour tortilla accompanied with pico de gallo and tomatillo salsa.<br>
             <small><em>Add bacon ... <strong class="font-semibold">$1.00</strong></em><br>
             <em class="text-brand-mahogany">Make it VEGAN ... <strong class="font-semibold">$4.00</strong></em></small></p>
           </div>
 
           <div class="mt-8">
-            <h4 class="pb-1">Onion Rings<strong class="pl-4 font-semibold text-lg">$11.00</strong></h4>
+            <h4 class="pb-1">
+              Onion Rings
+              <strong class="pl-4 font-semibold text-lg">$11.00</strong>
+            </h4>
             <p>Jumbo onion rings fried to a golden brown and served with Sriracha ranch.</p>
           </div>
 
@@ -119,12 +148,19 @@ get_header('light'); ?>
           </p>
 
           <div class="mt-12">
-            <h4 class="pb-1">* The Point Burger<strong class="pl-4 font-semibold text-lg">$14.00</strong></h4>
+            <h4 class="pb-1">
+              * The Point Burger
+              <strong class="pl-4 font-semibold text-lg">$14.00</strong>
+            </h4>
             <p>Seasoned ground beef patty topped with jalapeño cream cheese, bacon, lettuce, tomato, pickles, onion and avocado.</p>
           </div>
 
           <div class="mt-8">
-            <h4 class="pb-1">* The Classic Cheeseburger<strong class="pl-4 font-semibold text-lg">$11.50</strong></h4>
+            <h4 class="pb-1">
+              * The Classic Cheeseburger
+              <strong class="pl-4 font-semibold text-lg" data-locations='["central-point", "medford"]'>$11.50</strong>
+              <strong class="pl-4 font-semibold text-lg" data-locations='["bend"]'>$12.00</strong>
+            </h4>
             <p>Seasoned ground beef patty served with lettuce, tomato, onions, pickles and cheddar cheese.<br>
               <small>
                 <em>Add bacon ... <strong class="font-semibold">$2.00</strong></em>
@@ -133,12 +169,19 @@ get_header('light'); ?>
           </div>
 
           <div class="mt-12">
-            <h4 class="pb-1">* The Blue Burger<strong class="pl-4 font-semibold text-lg">$13.00</strong></h4>
+            <h4 class="pb-1">
+              * The Blue Burger
+              <strong class="pl-4 font-semibold text-lg">$13.00</strong>
+            </h4>
             <p>Seasoned ground beef patty topped with blue cheese crumbles, caramelized onions and jalapeño aioli with lettuce, tomato and pickle.</p>
           </div>
 
           <div class="mt-8">
-            <h4 class="pb-1">* The Western Burger<strong class="pl-4 font-semibold text-lg">$14.50</strong></h4>
+            <h4 class="pb-1">
+              * The Western Burger
+              <strong class="pl-4 font-semibold text-lg" data-locations='["central-point", "medford"]'>$14.50</strong>
+              <strong class="pl-4 font-semibold text-lg" data-locations='["bend"]'>$15.00</strong>
+            </h4>
             <p>Seasoned ground beef patty piled high with, bacon, roasted Ortega chilies, pepper jack cheese, lettuce, tomato, onion ring, and house made bacon BBQ sauce.<br>
               <small>
                 <em>Add avocado ... <strong class="font-semibold">$1.00</strong></em>
@@ -149,7 +192,8 @@ get_header('light'); ?>
           <div class="mt-8">
             <h4 class="pb-1 text-brand-mahogany">
               <sup class="text-sm inline-flex justify-center items-center pr-2 text-center font-medium">VEGAN</sup>
-              The Best Ever Non-Beef Burger<strong class="pl-4 font-semibold text-lg">$17.00</strong>
+              The Best Ever Non-Beef Burger
+              <strong class="pl-4 font-semibold text-lg">$17.00</strong>
             </h4>
             <p>Vegan beef burger patty topped with sundried tomato, diced jalapeno, vegan cream cheese, pickle, onion, lettuce, tomato, and avocado.<br>
               <small class="text-brand-mahogany">
@@ -169,7 +213,8 @@ get_header('light'); ?>
           <div class="mt-2">
             <h4 class="pb-1">
               <sup class="text-sm inline-flex justify-center items-center pr-2 text-center font-medium">GF</sup>
-              Side Salad<strong class="pl-4 font-semibold text-lg">$5.00</strong>
+              Side Salad
+              <strong class="pl-4 font-semibold text-lg">$5.00</strong>
             </h4>
           </div>
 
@@ -177,23 +222,31 @@ get_header('light'); ?>
             <h4 class="pb-1">
               <sup class="text-sm inline-flex justify-center items-center pr-2 text-center font-medium">GF</sup>
               <sup class="text-sm text-brand-mahogany inline-flex justify-center items-center pr-2 text-center font-medium">VEGAN</sup>
-              Sweet Potato Fries<strong class="pl-4 font-semibold text-lg">$6.00</strong>
+              Sweet Potato Fries
+              <strong class="pl-4 font-semibold text-lg">$6.00</strong>
             </h4>
           </div>
 
           <div class="mt-8">
             <h4 class="pb-1">
               <sup class="text-sm text-brand-mahogany inline-flex justify-center items-center pr-2 text-center font-medium">VEGAN</sup>
-              French Fries<strong class="pl-4 font-semibold text-lg">$5.00</strong>
+              French Fries
+              <strong class="pl-4 font-semibold text-lg">$5.00</strong>
             </h4>
           </div>
 
           <div class="mt-8">
-            <h4 class="pb-1">"The Point" Mac & Cheese<strong class="pl-4 font-semibold text-lg">$7.00</strong></h4>
+            <h4 class="pb-1">
+              "The Point" Mac & Cheese
+              <strong class="pl-4 font-semibold text-lg">$7.00</strong>
+            </h4>
           </div>
 
           <div class="mt-8">
-            <h4 class="pb-1">Garlic Bread (3)<strong class="pl-4 font-semibold text-lg">$3.00</strong></h4>
+            <h4 class="pb-1">
+              Garlic Bread (3)
+              <strong class="pl-4 font-semibold text-lg">$3.00</strong>
+            </h4>
           </div>
 
         </div>
@@ -216,45 +269,72 @@ get_header('light'); ?>
           </p>
 
           <div class="mt-12 border-brand-mahogany border-8 border-double p-6">
-            <h4 class="pb-1">The Mac Daddy Patty Melt<strong class="pl-4 font-semibold text-lg">$14.00</strong></h4>
+            <h4 class="pb-1">
+              The Mac Daddy Patty Melt
+              <strong class="pl-4 font-semibold text-lg" data-locations='["central-point", "medford"]'>$14.00</strong>
+              <strong class="pl-4 font-semibold text-lg" data-locations='["bend"]'>$14.50</strong>
+            </h4>
             <p>Seasoned beef patty with caramelized onions, bacon, house made BBQ sauce, pepper jack cheese, and our famous macaroni and cheese on grilled sourdough.</p>
           </div>
 
           <div class="mt-8">
-            <h4 class="pb-1">Philly Cheesesteak<strong class="pl-4 font-semibold text-lg">$13.50</strong></h4>
+            <h4 class="pb-1">
+              Philly Cheesesteak
+              <strong class="pl-4 font-semibold text-lg" data-locations='["central-point", "medford"]'>$13.50</strong>
+              <strong class="pl-4 font-semibold text-lg" data-locations='["bend"]'>$14.00</strong>
+            </h4>
             <p>Sliced ribeye, sautéed onions, peppers and mushrooms with melted provolone cheese and chipotle aioli served on a toasted hoagie roll.</p>
           </div>
 
           <div class="mt-8">
-            <h4 class="pb-1">French Dip<strong class="pl-4 font-semibold text-lg">$12.00</strong></h4>
+            <h4 class="pb-1">
+              French Dip
+              <strong class="pl-4 font-semibold text-lg" data-locations='["central-point", "medford"]'>$12.00</strong>
+              <strong class="pl-4 font-semibold text-lg" data-locations='["bend"]'>$12.50</strong>
+            </h4>
             <p>Sliced ribeye with melted Swiss cheese on a toasted hoagie roll and served with fresh au jus.<br>
             <small><em>Horseradish available on request</em></small></p>
           </div>
 
           <div class="mt-8">
-            <h4 class="pb-1">Caprese Ciabatta<strong class="pl-4 font-semibold text-lg">$12.00</strong></h4>
+            <h4 class="pb-1">
+              Caprese Ciabatta
+              <strong class="pl-4 font-semibold text-lg">$12.00</strong>
+            </h4>
             <p>Melted mozzarella cheese, basil, and tomato, dressed with pesto and balsamic reduction on ciabatta bread.<br>
             <small><em>Add chicken ... <strong class="font-semibold">$4.00</strong></em></small></p>
           </div>
 
           <div class="mt-8">
-            <h4 class="pb-1">Turkey Club Ciabatta<strong class="pl-4 font-semibold text-lg">$14.00</strong></h4>
+            <h4 class="pb-1">
+              Turkey Club Ciabatta
+              <strong class="pl-4 font-semibold text-lg">$14.00</strong>
+            </h4>
             <p>Sliced turkey, cheddar cheese, bacon, avocado, caramelized onion, lettuce, and tomato with house made chipotle aioli on ciabatta bread.<br>
             <small><em>Substitute Chicken Breast on Request</em></small></p>
           </div>
 
           <div class="mt-8">
-            <h4 class="pb-1">Crispy Chicken Wrap<strong class="pl-4 font-semibold text-lg">$13.00</strong></h4>
+            <h4 class="pb-1">
+              Crispy Chicken Wrap
+              <strong class="pl-4 font-semibold text-lg">$13.00</strong>
+            </h4>
             <p>Crispy chicken with romaine lettuce, tomato, and cheddar cheese with bacon aioli wrapped in a flour tortilla.</p>
           </div>
 
           <div class="mt-8">
-            <h4 class="pb-1">"The Point" Patty Melt<strong class="pl-4 font-semibold text-lg">$13.00</strong></h4>
+            <h4 class="pb-1">
+              "The Point" Patty Melt
+              <strong class="pl-4 font-semibold text-lg">$13.00</strong>
+            </h4>
             <p>Seasoned beef patty grilled to order, smothered with caramelized onions and 1000 island dressing with melted Swiss and provolone cheese on grilled marble rye.</p>
           </div>
 
           <div class="mt-8">
-            <h4 class="pb-1">Reuben Sandwich<strong class="pl-4 font-semibold text-lg">$13.00</strong></h4>
+            <h4 class="pb-1">
+              Reuben Sandwich
+              <strong class="pl-4 font-semibold text-lg">$13.00</strong>
+            </h4>
             <p>Sliced corned beef with melted Swiss cheese, 1000 island, and sauerkraut on grilled marble rye.</p>
           </div>
 
@@ -267,7 +347,11 @@ get_header('light'); ?>
           <h2>Point Favorites</h2>
 
           <div class="mt-2 border-brand-mahogany border-8 border-double p-6">
-            <h4 class="pb-1">Beer Battered Fish<strong class="pl-4 font-semibold text-lg">$13.00</strong></h4>
+            <h4 class="pb-1">
+              Beer Battered Fish
+              <strong class="pl-4 font-semibold text-lg" data-locations='["central-point", "medford"]'>$13.00</strong>
+              <strong class="pl-4 font-semibold text-lg" data-locations='["bend"]'>$14.00</strong>
+            </h4>
             <p>Cod, fried in house made beer batter with zesty rémoulade. Served with your choice of fries and either green salad or fresh coleslaw.<br>
               <small>
                 <em>Add a 3<sup>rd</sup> piece of fish ... <strong class="font-semibold">$3.00</strong></em><br>
@@ -278,7 +362,10 @@ get_header('light'); ?>
           </div>
 
           <div class="mt-8" data-locations='["central-point", "medford"]'>
-            <h4 class="pb-1">Mediterranean Pesto Alfredo Pasta<strong class="pl-4 font-semibold text-lg">$13.25</strong></h4>
+            <h4 class="pb-1">
+              Mediterranean Pesto Alfredo Pasta
+              <strong class="pl-4 font-semibold text-lg">$13.25</strong>
+            </h4>
             <p>Creamy pesto alfredo with sautéed mushrooms, spinach, tomato, and kalamata olives. Served with garlic bread.<br>
               <small>
                 <em>Add grilled chicken ... <strong class="font-semibold">$4.00</strong></em><br>
@@ -288,18 +375,41 @@ get_header('light'); ?>
           </div>
 
           <div class="mt-8" data-locations='["bend"]'>
-            <h4 class="pb-1">The Warf Pasta<strong class="pl-4 font-semibold text-lg">$17.00</strong></h4>
+            <h4 class="pb-1">
+              The Warf Pasta
+              <strong class="pl-4 font-semibold text-lg">$17.00</strong>
+            </h4>
             <p>Penne pasta with our house made alfredo bur blanc, blackened salmon or sesame peppered ahi, capers, sautéed mushrooms, fresh tomatoes, and basil. Served with garlic bread.</p>
           </div>
 
-          <div class="mt-8">
-            <h4 class="pb-1">Chicken Bacon Mac & Cheese<strong class="pl-4 font-semibold text-lg">$14.50</strong></h4>
-            <p>Our famous macaroni and cheese tossed with crispy bacon, grilled chicken, and seasonal vegetables.</p>
+          <div class="mt-8" data-locations='["bend"]'>
+            <h4 class="pb-1">
+              Blazing Buffalo Alfredo Pasta
+              <strong class="pl-4 font-semibold text-lg">$16.00</strong>
+            </h4>
+            <p>Creamy alfredo penne pasta with sautéed mushrooms, tomatoes, and red onion. Topped with crispy buffalo style chicken and bleu cheese crumbles. Served with garlic bread.</p>
           </div>
 
           <div class="mt-8">
-            <h4 class="pb-1">"The Point" B.L.T.<strong class="pl-4 font-semibold text-lg">$12.00</strong></h4>
-            <p>Fresh lettuce and tomato with crisp bacon and mayonnaise, served on grilled sourdough with your choice of fries or salad.<br>
+            <h4 class="pb-1">
+              Chicken Bacon Mac & Cheese
+              <strong class="pl-4 font-semibold text-lg" data-locations='["central-point", "medford"]'>$14.50</strong>
+              <strong class="pl-4 font-semibold text-lg" data-locations='["bend"]'>$15.00</strong>
+            </h4>
+            <p>
+              Our famous macaroni and cheese tossed with crispy bacon, grilled chicken, and seasonal vegetables.
+              <em data-locations='["bend"]'><br>Substitute Gluten Free Macaroni ... <strong class="font-semibold">$1.00</strong></em><br>
+            </p>
+          </div>
+
+          <div class="mt-8">
+            <h4 class="pb-1">
+              "The Point" B.L.T.
+              <strong class="pl-4 font-semibold text-lg" data-locations='["central-point", "medford"]'>$12.00</strong>
+              <strong class="pl-4 font-semibold text-lg" data-locations='["bend"]'>$12.50</strong>
+            </h4>
+            <p>
+              Fresh lettuce and tomato with crisp bacon and mayonnaise, served on grilled sourdough with your choice of fries or salad.<br>
               <small>
                 <em>Substitute Onion Rings for 3 or Sweet Potato Fries ... <strong class="font-semibold">$1.50</strong></em><br>
                 <em>Add avocado ... <strong class="font-semibold">$1.00</strong></em>
@@ -308,8 +418,12 @@ get_header('light'); ?>
           </div>
 
           <div class="mt-8">
-            <h4 class="pb-1">"The Point" Chimichanga<strong class="pl-4 font-semibold text-lg">$16.00</strong></h4>
-            <p>Your choice of chicken breast or ribeye steak, sautéed onions, peppers, pepper jack, and black beans. Topped with pico de gallo, tomatillo salsa, and served with fresh house made tortilla chips.<br>
+            <h4 class="pb-1">
+              "The Point" Chimichanga
+              <strong class="pl-4 font-semibold text-lg">$16.00</strong>
+            </h4>
+            <p>
+              Your choice of chicken breast or ribeye steak, sautéed onions, peppers, pepper jack, and black beans. Topped with pico de gallo, tomatillo salsa, and served with fresh house made tortilla chips.<br>
               <small>
                 <em class="text-brand-mahogany">Make it VEGAN ... <strong class="font-semibold">$4.00</strong></em>
               </small>
@@ -338,9 +452,11 @@ get_header('light'); ?>
               <div>
                 <h4 class="pb-1">
                   <sup class="text-sm inline-flex justify-center items-center pr-2 text-center font-medium">GF</sup>
-                  Baby Mixed Green Salad<br><strong class="font-semibold text-lg">Full $11.00 / Half $7.00</strong>
+                  Baby Mixed Green Salad<br>
+                  <strong class="font-semibold text-lg">Full $11.00 / Half $7.00</strong>
                 </h4>
-                <p>Mixed greens, dried cranberries, tomatoes, carrots, sliced red onion, and blue cheese crumbles with a balsamic vinaigrette dressing.<br>
+                <p>
+                  Mixed greens, dried cranberries, tomatoes, carrots, sliced red onion, and blue cheese crumbles with a balsamic vinaigrette dressing.<br>
                   <small>
                     <em>Add grilled chicken ... <strong class="font-semibold">$4.00</strong></em><br>
                     <em>Add grilled Sockeye Salmon ... <strong class="font-semibold">$6.00</strong></em><br>
@@ -354,9 +470,11 @@ get_header('light'); ?>
               <div class="mt-8 lg:mt-0">
                 <h4 class="pb-1">
                   <sup class="text-sm inline-flex justify-center items-center pr-2 text-center font-medium">GF</sup>
-                  Mediterranean Salad<strong class="pl-4 font-semibold text-lg">$13.00</strong>
+                  Mediterranean Salad
+                  <strong class="pl-4 font-semibold text-lg">$13.00</strong>
                 </h4>
-                <p>Spinach, kalamata olives, artichokes, sun- dried tomato, red onion, and feta cheese. Topped with house made balsamic vinaigrette.<br>
+                <p>
+                  Spinach, kalamata olives, artichokes, sun- dried tomato, red onion, and feta cheese. Topped with house made balsamic vinaigrette.<br>
                   <small>
                     <em>Add grilled chicken ... <strong class="font-semibold">$4.00</strong></em><br>
                     <em>Add grilled Sockeye salnib ... <strong class="font-semibold">$6.00</strong></em>
@@ -368,7 +486,8 @@ get_header('light'); ?>
             <div class="w-full lg:w-1/3 inline-flex flex-col lg:px-12" data-locations='["bend"]'>
               <div class="mt-8 lg:mt-0">
                 <h4 class="pb-1">
-                  Buffalo Bleu Salad<strong class="pl-4 font-semibold text-lg">$15.00</strong>
+                  Buffalo Bleu Salad
+                  <strong class="pl-4 font-semibold text-lg">$15.00</strong>
                 </h4>
                 <p>Romaine lettuce with carrots, tomatoes, red onion, and bleu cheese crumbles. Topped with your choice of crispy or grilled buffalo style chicken. Served with bleu cheese dressing.</p>
               </div>
@@ -377,7 +496,8 @@ get_header('light'); ?>
             <div class="w-full lg:w-1/3 inline-flex flex-col lg:px-12">
               <div class="mt-8 lg:mt-0">
                 <h4 class="pb-1">
-                  Chicken Bacon Ranch Salad<strong class="pl-4 font-semibold text-lg">$14.00</strong>
+                  Chicken Bacon Ranch Salad
+                  <strong class="pl-4 font-semibold text-lg">$14.00</strong>
                 </h4>
                 <p>Romaine lettuce topped with crispy chicken, chopped bacon, shredded cheddar, black olives, and tomato. Served with ranch dressing.</p>
               </div>
@@ -390,9 +510,12 @@ get_header('light'); ?>
             <div class="w-full lg:w-1/3 inline-flex flex-col lg:px-12">
               <div>
                 <h4 class="pb-1">
-                  Caesar Salad<br><strong class="font-semibold text-lg">Full $11.00 / Half $6.50</strong>
+                  Caesar Salad<br>
+                  <strong class="font-semibold text-lg" data-locations='["central-point", "medford"]'>Full $11.00 / Half $6.50</strong>
+                  <strong class="font-semibold text-lg" data-locations='["bend"]'>Full $11.00 / Half $6.50</strong>
                 </h4>
-                <p>Romaine lettuce, shredded parmesan cheese and herb croutons with classic Caesar dressing.<br>
+                <p>
+                  Romaine lettuce, shredded parmesan cheese and herb croutons with classic Caesar dressing.<br>
                   <small>
                     <em>Add grilled chicken ... <strong class="font-semibold">$4.00</strong></em><br>
                     <em>Add grilled Sockeye Salmon ... <strong class="font-semibold">$6.00</strong></em><br>
@@ -413,7 +536,8 @@ get_header('light'); ?>
               <div class="mt-8 lg:mt-0">
                 <h4 class="pb-1">
                   <sup class="text-sm inline-flex justify-center items-center pr-2 text-center font-medium">GF</sup>
-                  Southwest Chicken Salad<strong class="pl-4 font-semibold text-lg">$14.00</strong>
+                  Southwest Chicken Salad
+                  <strong class="pl-4 font-semibold text-lg">$14.00</strong>
                 </h4>
                 <p>Romaine lettuce, grilled chicken breast, tomatoes, black beans, corn, shredded pepper jack cheese, and corn tortilla strips, served with parmesan–cilantro dressing.</p>
               </div>
@@ -675,7 +799,10 @@ get_header('light'); ?>
 
           <div class="w-full lg:w-1/2 mx-auto inline-flex flex-col justify-center">
             <div class="mt-2 border-brand-mahogany border-8 border-double p-6">
-              <h4 class="pb-1">Our Famous Vegan Mac &amp; Cheese<strong class="pl-4 font-semibold text-lg">$18.00</strong></h4>
+              <h4 class="pb-1">
+                Our Famous Vegan Mac &amp;amp; Cheese
+                <strong class="pl-4 font-semibold text-lg">$18.00</strong>
+              </h4>
               <p>Our famous vegan macaroni and cheese tossed with vegan chicken and seasonal vegetable. Served with garlic bread.</p>
             </div>
           </div>
@@ -685,7 +812,8 @@ get_header('light'); ?>
             <div class="w-full lg:w-1/2 inline-flex flex-col lg:px-12 mt-6 lg:mt-12">
               <div>
                 <h4 class="pb-1">
-                  Vegan Philly Cheesesteak<strong class="pl-4 font-semibold text-lg">$17.00</strong>
+                  Vegan Philly Cheesesteak
+                  <strong class="pl-4 font-semibold text-lg">$17.00</strong>
                 </h4>
                 <p>Thin sliced vegan beef with sautéed onions, peppers and mushrooms with melted vegan mozzarella cheese and vegan chipotle aioli on a toasted hoagie roll. Served with your choice of fries.</p>
               </div>
@@ -694,7 +822,8 @@ get_header('light'); ?>
             <div class="w-full lg:w-1/2 inline-flex flex-col lg:px-12 mt-4 lg:mt-8">
               <div>
                 <h4 class="pb-1">
-                Vegan Mac Daddy Patty Melt<strong class="pl-4 font-semibold text-lg">$18.00</strong>
+                  Vegan Mac Daddy Patty Melt
+                  <strong class="pl-4 font-semibold text-lg">$18.00</strong>
                 </h4>
                 <p>A Beyond burger on grilled sourdough with caramelized onions, melted mozzarella, BBQ sauce and our famous vegan macaroni and cheese. Served with your choice of fries.</p>
               </div>
@@ -707,7 +836,8 @@ get_header('light'); ?>
             <div class="w-full lg:w-1/2 inline-flex flex-col lg:px-12 mt-4 lg:mt-8">
               <div>
                 <h4 class="pb-1">
-                Stadium Style Vegan Chicken Nachos<strong class="pl-4 font-semibold text-lg">$14.00</strong>
+                  Stadium Style Vegan Chicken Nachos
+                  <strong class="pl-4 font-semibold text-lg">$14.00</strong>
                 </h4>
                 <p>House made chips topped with vegan cheddar and mozzarella cheese, vegan chicken, black beans, pico de gallo, and jalapenos.</p>
               </div>
@@ -716,7 +846,8 @@ get_header('light'); ?>
             <div class="w-full lg:w-1/2 inline-flex flex-col lg:px-12 mt-4 lg:mt-8">
               <div>
                 <h4 class="pb-1">
-                Bordertown Vegan Taco Salad<strong class="pl-4 font-semibold text-lg">$17.00</strong>
+                  Bordertown Vegan Taco Salad
+                  <strong class="pl-4 font-semibold text-lg">$17.00</strong>
                 </h4>
                 <p>A tortilla bowl fried to perfection filled with chopped romaine, corn, black beans, tomatoes, fiesta tortilla strips and shredded vegan mozzarella cheese. Topped with your choice of grilled vegan chicken or seasoned vegan ground beef.</p>
               </div>
@@ -729,7 +860,8 @@ get_header('light'); ?>
             <div class="w-full lg:w-1/2 inline-flex flex-col lg:px-12 mt-4 lg:mt-8">
               <div>
                 <h4 class="pb-1">
-                Maui Luau Vegan Chicken Sandwich<strong class="pl-4 font-semibold text-lg">$17.00</strong>
+                  Maui Luau Vegan Chicken Sandwich
+                  <strong class="pl-4 font-semibold text-lg">$17.00</strong>
                 </h4>
                 <p>Savory grilled vegan chicken tossed in teriyaki sauce on a bed of lettuce, tomato, and red onion. Topped with sautéed mushrooms, pineapple, and melted mozzarella cheese on grilled sourdough bread. Served with your choice of fries.</p>
               </div>
@@ -738,9 +870,11 @@ get_header('light'); ?>
             <div class="w-full lg:w-1/2 inline-flex flex-col lg:px-12 mt-4 lg:mt-8">
               <div>
                 <h4 class="pb-1">
-                Vegan Caesar Salad<br><strong class="font-semibold text-lg">Full $12.00 / Half $8.00</strong>
+                  Vegan Caesar Salad<br>
+                  <strong class="font-semibold text-lg">Full $12.00 / Half $8.00</strong>
                 </h4>
-                <p>Romaine lettuce, shredded vegan mozzarella cheese, and vegan sourdough croutons tossed in our house made vegan Caesar dressing.<br>
+                <p>
+                  Romaine lettuce, shredded vegan mozzarella cheese, and vegan sourdough croutons tossed in our house made vegan Caesar dressing.<br>
                   <small>
                     <em>Add vegan chicken ... <strong class="font-semibold">$4.00</strong></em><br>
                   </small>
@@ -755,7 +889,8 @@ get_header('light'); ?>
             <div class="w-full lg:w-1/2 inline-flex flex-col lg:px-12 mt-4 lg:mt-8">
               <div>
                 <h4 class="pb-1">
-                Southern Style Vegan Patty Melt<strong class="pl-4 font-semibold text-lg">$16.00</strong>
+                  Southern Style Vegan Patty Melt
+                  <strong class="pl-4 font-semibold text-lg">$16.00</strong>
                 </h4>
                 <p>A Beyond burger on grilled marbled rye bread with melted vegan mozzarella and cheddar cheese. Topped with BBQ sauce, jalapenos and caramelized onions. Served with your choice of fries.</p>
               </div>
@@ -764,7 +899,8 @@ get_header('light'); ?>
             <div class="w-full lg:w-1/2 inline-flex flex-col lg:px-12 mt-4 lg:mt-8">
               <div>
                 <h4 class="pb-1">
-                Blazing Buffalo Vegan Mozzarella Melt<strong class="pl-4 font-semibold text-lg">$17.00</strong>
+                  Blazing Buffalo Vegan Mozzarella Melt
+                  <strong class="pl-4 font-semibold text-lg">$17.00</strong>
                 </h4>
                 <p>Vegan chicken tossed in buffalo sauce, with melted mozzarella on grilled sourdough. Topped with lettuce, tomato, red onion and pickles. Served with your choice of fries.</p>
               </div>
@@ -780,21 +916,27 @@ get_header('light'); ?>
 
               <div class="w-full lg:w-1/3 inline-flex flex-col lg:px-12 mt-0">
                 <div>
-                  <h4 class="pb-1">Kona Style Vegan Chicken</h4>
+                  <h4 class="pb-1">
+                    Kona Style Vegan Chicken
+                  </h4>
                   <p>Three tacos with grilled vegan chicken, pineapple and mushrooms. Topped with shredded cabbage, pico de gallo, and a teriyaki drizzle.</p>
                 </div>
               </div>
 
               <div class="w-full lg:w-1/3 inline-flex flex-col lg:px-12 mt-4 lg:mt-0">
                 <div>
-                  <h4 class="pb-1">Buffalo Vegan Mozzarella</h4>
+                  <h4 class="pb-1">
+                    Buffalo Vegan Mozzarella
+                  </h4>
                   <p>Three tacos with vegan chicken tossed in buffalo sauce. Topped with vegan mozzarella, shredded cabbage and pico de gallo.</p>
                 </div>
               </div>
 
               <div class="w-full lg:w-1/3 inline-flex flex-col lg:px-12 mt-4 lg:mt-0">
                 <div>
-                  <h4 class="pb-1">Vegan Chicken Fajita</h4>
+                  <h4 class="pb-1">
+                    Vegan Chicken Fajita
+                  </h4>
                   <p>Three tacos with fajita seasoned bell peppers, onions, and vegan chicken. Topped with shredded cabbage, pico de gallo, and tomatillo salsa.</p>
                 </div>
               </div>
@@ -824,7 +966,8 @@ get_header('light'); ?>
             <div class="w-full lg:w-1/2 inline-flex flex-col lg:px-12">
               <div class="border-brand-mahogany border-8 border-double p-6">
                 <h4 class="pb-1">
-                  The Point Mini Donuts<strong class="pl-4 font-semibold text-lg">$8.00</strong>
+                  The Point Mini Donuts
+                  <strong class="pl-4 font-semibold text-lg">$8.00</strong>
                 </h4>
                 <p>Freshly fried mini donuts served hot and sprinkled in cinnamon sugar. Served with your choice of chocolate or caramel sauce for dipping.</p>
               </div>
@@ -834,7 +977,8 @@ get_header('light'); ?>
               <div class="mt-8 lg:mt-0">
                 <h4 class="pb-1">
                   <sup class="text-sm inline-flex justify-center items-center pr-2 text-center font-medium">GF</sup>
-                  Chocolate Lava Cake<strong class="pl-4 font-semibold text-lg">$8.00</strong>
+                  Chocolate Lava Cake
+                  <strong class="pl-4 font-semibold text-lg">$8.00</strong>
                 </h4>
                 <p>Decadent chocolate cake with a molten chocolate center, served with vanilla bean ice cream.</p>
               </div>
@@ -847,7 +991,8 @@ get_header('light'); ?>
             <div class="w-full lg:w-1/2 inline-flex flex-col lg:px-12">
               <div>
                 <h4 class="pb-1">
-                Bourbon Bundt Cake<strong class="pl-4 font-semibold text-lg">$8.00</strong>
+                  Bourbon Bundt Cake
+                  <strong class="pl-4 font-semibold text-lg">$8.00</strong>
                 </h4>
                 <p>Fluffy bunt cake soaked in our bourbon caramel and pecan sauce. Topped with caramel and vanilla bean ice cream.</p>
               </div>
@@ -857,7 +1002,8 @@ get_header('light'); ?>
               <div class="mt-8 lg:mt-0">
                 <h4 class="pb-1">
                   <sup class="text-sm inline-flex justify-center items-center pr-2 text-center font-medium">GF</sup>
-                  Vanilla Ice Cream<strong class="pl-4 font-semibold text-lg">$3.50</strong>
+                  Vanilla Ice Cream
+                  <strong class="pl-4 font-semibold text-lg">$3.50</strong>
                 </h4>
                 <p>A large scoop of vanilla ice cream topped with your choice of chocolate or caramel sauce.</p>
               </div>
