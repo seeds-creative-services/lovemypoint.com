@@ -91,7 +91,7 @@ if(isset($_POST['captcha']) && $_POST['captcha'] !== "") {
         $mail->addAddress('jarmstrong@lovemypoint.com');
 
         // CC Myself on all emails.
-        $mail->addCC('sebastian@seedscs.com', 'Sebastian Inman');
+        // $mail->addCC('sebastian@seedscs.com', 'Sebastian Inman');
 
         $mail->isHTML(true);
         $mail->Subject = $subject;
