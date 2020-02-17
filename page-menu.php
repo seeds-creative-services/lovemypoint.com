@@ -277,7 +277,7 @@ get_header('light'); ?>
             </p>
           </div>
 
-          <div class="mt-8">
+          <div class="mt-8" data-locations='["central-point", "medford"]'>
             <h4 class="pb-1">Mediterranean Pesto Alfredo Pasta<strong class="pl-4 font-semibold text-lg">$13.25</strong></h4>
             <p>Creamy pesto alfredo with sautéed mushrooms, spinach, tomato, and kalamata olives. Served with garlic bread.<br>
               <small>
@@ -285,6 +285,11 @@ get_header('light'); ?>
                 <em>Add Sockeye salmon ... <strong class="font-semibold">$6.00</strong></em>
               </small>
             </p>
+          </div>
+
+          <div class="mt-8" data-locations='["bend"]'>
+            <h4 class="pb-1">The Warf Pasta<strong class="pl-4 font-semibold text-lg">$17.00</strong></h4>
+            <p>Penne pasta with our house made alfredo bur blanc, blackened salmon or sesame peppered ahi, capers, sautéed mushrooms, fresh tomatoes, and basil. Served with garlic bread.</p>
           </div>
 
           <div class="mt-8">
@@ -345,7 +350,22 @@ get_header('light'); ?>
               </div>
             </div>
 
-            <div class="w-full lg:w-1/3 inline-flex flex-col lg:px-12">
+            <div class="w-full lg:w-1/3 inline-flex flex-col lg:px-12" data-locations='["central-point", "medford"]'>
+              <div class="mt-8 lg:mt-0">
+                <h4 class="pb-1">
+                  <sup class="text-sm inline-flex justify-center items-center pr-2 text-center font-medium">GF</sup>
+                  Mediterranean Salad<strong class="pl-4 font-semibold text-lg">$13.00</strong>
+                </h4>
+                <p>Spinach, kalamata olives, artichokes, sun- dried tomato, red onion, and feta cheese. Topped with house made balsamic vinaigrette.<br>
+                  <small>
+                    <em>Add grilled chicken ... <strong class="font-semibold">$4.00</strong></em><br>
+                    <em>Add grilled Sockeye salnib ... <strong class="font-semibold">$6.00</strong></em>
+                  </small>
+                </p>
+              </div>
+            </div>
+
+            <div class="w-full lg:w-1/3 inline-flex flex-col lg:px-12" data-locations='["bend"]'>
               <div class="mt-8 lg:mt-0">
                 <h4 class="pb-1">
                   Buffalo Bleu Salad<strong class="pl-4 font-semibold text-lg">$15.00</strong>
