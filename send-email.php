@@ -32,7 +32,7 @@ if(isset($_POST['captcha']) && $_POST['captcha'] !== "") {
 
   if(isset($curlJSON['success']) && ($curlJSON['success'] === 1 || $curlJSON['success'] === true || $curlJSON['success'] === '1' || $curlJSON['success'] === 'true')) {
 
-    if($curlJSON['score'] > 0.4) {
+    if($curlJSON['score'] > 0.2) {
 
       $mail = new PHPMailer(true);
 
@@ -79,8 +79,12 @@ if(isset($_POST['captcha']) && $_POST['captcha'] !== "") {
         $mail->Username = 'no-reply@lovemypoint.com';
         $mail->Password = 'lovemypoint';
 
+        $fromEmail = $_POST['form']['email'] ?? 'no-reply@lovemypoint.com';
+        $fromName = $_POST['form']['name'] ?? 'The Point Pub & Grill';
+
         // This is who the email is being sent from.
         $mail->setFrom('no-reply@lovemypoint.com', 'The Point Pub & Grill');
+        $mail->addReplyTo($fromEmail, $fromName);
 
         // Send the email to these addresses.
         $mail->addAddress('thoevet@lovemypoint.com');
