@@ -35,9 +35,9 @@
           <h4>Open Hours</h4>
           <div class="w-3/4 mt-4 pt-6 border-t-4 border-double border-brand-mahogany mx-auto"></div>
           <ul>
-            <li>Monday - Thursday: 11:00AM - 9:00PM</li>
-            <li>Friday & Saturday: 11:00AM - 10:00PM</li>
-            <li>Sunday: 11:00AM - 9:00PM</li>
+            <li>Monday - Thursday: 12:00PM - 7:00PM</li>
+            <li>Friday & Saturday: 12:00PM - 7:00PM</li>
+            <li>Sunday: 12:00PM - 7:00PM</li>
           </ul>
         </div>
       </div>

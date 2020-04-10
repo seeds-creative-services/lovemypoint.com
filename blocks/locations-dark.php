@@ -36,8 +36,8 @@
             "streetAddress": "311 East Pine Street"
           },
           "openingHours": [
-            "Su-Th 11:00-21:00",
-            "Fr-Sa 11:00-22:00"
+            "Su-Th 12:00-19:00",
+            "Fr-Sa 12:00-19:00"
           ],
           "priceRange": "$$",
           "servesCuisine": [
@@ -80,8 +80,8 @@
             "streetAddress": "1345 Center Drive"
           },
           "openingHours": [
-            "Su-Th 11:00-21:00",
-            "Fr-Sa 11:00-22:00"
+            "Su-Th 12:00-19:00",
+            "Fr-Sa 12:00-19:00"
           ],
           "priceRange": "$$",
           "servesCuisine": [
@@ -124,8 +124,8 @@
             "streetAddress": "744 NW Bond Street, Suite A"
           },
           "openingHours": [
-            "Su-Th 11:00-21:00",
-            "Fr-Sa 11:00-22:00"
+            "Su-Th 12:00-19:00",
+            "Fr-Sa 12:00-19:00"
           ],
           "priceRange": "$$",
           "servesCuisine": [
